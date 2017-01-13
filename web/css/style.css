@@ -1,0 +1,71 @@
+
+#mainButtons h3:hover {
+  transform: scale(1.5, 1.5);
+  background-color: yellow;
+}
+
+.iconBtn {
+    width: 100px;
+    position: relative;
+    opacity: 0.7;
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+.iconBtn:hover {
+    transform: scale(1.2, 1.2);
+    opacity: 1;
+}
+
+#myPicture {
+  float:right;
+  width: 150px;
+  height: auto;
+}
+
+.btn-lg {
+	padding: 20px; 
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+#icon {
+	margin-bottom: 20px;
+	margin-top: 20px;
+	width:70px;
+	height:70px;
+}
+
+#mainButtons {
+	text-align: center;
+}
+
+h1 {
+	color: white;
+}
+
+.embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object,
+.embed-responsive video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.embed-responsive-16by9 {
+  padding-bottom: 56.25%;
+}
+.embed-responsive-4by3 {
+  padding-bottom: 75%;
+}
