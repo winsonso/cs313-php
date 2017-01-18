@@ -1,7 +1,30 @@
+body {
+    background-color: #eee;
+}
+#myPic {
+  padding-right: 90px;
+}
+
+#assignContainer {
+  text-align: -webkit-center;
+}
 
 #mainButtons h3:hover {
   transform: scale(1.5, 1.5);
   background-color: yellow;
+}
+
+#assign {
+    width: 300px;
+    position: relative;
+    opacity: 0.8;
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+
+#assign:hover {
+    transform: scale(1.3, 1.3);
+    opacity: 1;
 }
 
 .iconBtn {
@@ -18,7 +41,7 @@
 
 #myPicture {
   float:right;
-  width: 150px;
+  width: 160px;
   height: auto;
 }
 
@@ -28,19 +51,20 @@
 	margin-top: 20px;
 }
 
-#icon {
+/*#icon {
 	margin-bottom: 20px;
 	margin-top: 20px;
 	width:70px;
 	height:70px;
-}
+}*/
 
 #mainButtons {
 	text-align: center;
 }
 
-h1 {
-	color: white;
+h2 {
+	color: red;
+  font-size: 54px;
 }
 
 .embed-responsive {
