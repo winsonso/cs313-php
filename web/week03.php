@@ -19,11 +19,11 @@ session_start();
     $occuption = $_POST["occuption"];
     $interest = $_POST["interest"];
 
-    $person = array('a','b','c');
+    $person = array(array('a','b','c'),array('aa','bb','bc'));
     print_r($person);
 //     $var = 0;
-     //$result = fopen("result.txt","w") or die("Unable to open file!!");
-
+    $result = fopen("result.txt","w") or die("Unable to open file!!");
+    fwrite($result, $person);
 // while(!feof($result)){
 //    $array[$var] = fgets($result);
 //    $var ++;
