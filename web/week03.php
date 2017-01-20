@@ -19,7 +19,7 @@ session_start();
     $occuption = $_POST["occuption"];
     $interest = $_POST["interest"];
 
-    $person = array('0' => , '1','2');
+    $person = array('a','b','c');
     print_r($person);
 //     $var = 0;
      //$result = fopen("result.txt","w") or die("Unable to open file!!");
