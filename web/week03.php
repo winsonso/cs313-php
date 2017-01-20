@@ -19,9 +19,10 @@ session_start();
     $occuption = $_POST["occuption"];
     $interest = $_POST["interest"];
 
-    echo "string ".$gender;
+    $person = array('0' => , '1','2');
+    print_r($person);
 //     $var = 0;
-//     $result = fopen("result.txt","w") or die("Unable to open file!!");
+     //$result = fopen("result.txt","w") or die("Unable to open file!!");
 
 // while(!feof($result)){
 //    $array[$var] = fgets($result);
