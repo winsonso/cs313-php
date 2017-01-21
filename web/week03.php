@@ -21,7 +21,7 @@ session_start();
     $interest = $_POST["interest"];
 
 if($gender ===NULL) 
-  {break;}
+  {echo "string";}
 else
  {
     $_SESSION['counter'] = 1;
