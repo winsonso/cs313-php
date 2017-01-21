@@ -22,9 +22,7 @@ session_start();
 
 
 
-if($gender ===NULL) 
-  {}
-else
+if($gender !==NULL) 
  {
     $_SESSION['counter'] = 1;
 $num = 0;
