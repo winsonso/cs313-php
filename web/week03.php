@@ -5,7 +5,7 @@
 </head>
 <body>
 <?php
-session_start();
+// session_start();
 // if(isset( $_SESSION['counter'] ) ) 
 // {
 //   echo "<center> You have already voted </center> ";
@@ -22,7 +22,46 @@ session_start();
 
 
 
-if($gender !==NULL) 
+if($gender ===NULL)
+{
+  $result = fopen("result.txt","r") or die("Unable to open file!!");
+    // fwrite($result, $person);
+
+
+  while(!feof($result))
+  {
+   $str = fgets($result);
+   $array[$counter] = (str_word_count($str, 1));
+   $counter ++;
+  }
+
+// echo "toal is " . $counter;
+// print_r($array);
+
+  fclose($result);
+
+
+  foreach ($array as $person) 
+  {
+    if($person[0] == "male")
+    {
+      $num ++;
+    }
+    if ($person[1] == "yes") 
+    {
+      $num2 ++;
+    }
+    if ($person[2] == "yes") 
+    {
+     $num3 += 1;
+    }
+    if ($person[3] == "yes") 
+    {
+      $num4 += 1;
+    }
+  }
+}
+else 
  {
     $_SESSION['counter'] = 1;
 $num = 0;
