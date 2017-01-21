@@ -14,7 +14,7 @@
 // {
     //$_SESSION['counter'] = 1;
 
-    $_SESSION['counter'] = 1;
+
     $gender = $_POST["gender"];
     $age = $_POST["age"];
     $occuption = $_POST["occuption"];
@@ -90,7 +90,7 @@ foreach ($array as $person) {
     $num4 += 1;
   }
 }
-
+}
 echo "<center>Result</center><br>";
 echo "<center>People who did the survey :".$counter."</center><br>";
 echo "<center>Male = ".$num."     Female = ".($counter-$num)."</center><br>";
@@ -103,7 +103,7 @@ echo "<center>People who like programming : Yes = ". $num4 ."     No = ".($count
 // fwrite($file,$final);
 // fclose($file);
  //}  
-}
+
 ?>
 </body>
 </html>
