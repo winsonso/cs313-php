@@ -5,7 +5,7 @@
 </head>
 <body>
 <?php
-// session_start();
+session_start();
 // if(isset( $_SESSION['counter'] ) ) 
 // {
 //   echo "<center> You have already voted </center> ";
