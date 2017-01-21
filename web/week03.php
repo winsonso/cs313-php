@@ -20,10 +20,11 @@ session_start();
     $occuption = $_POST["occuption"];
     $interest = $_POST["interest"];
 
-$num;
-$num2;
-$num3;
-$num4;
+$num = 0;
+$num2 = 0;
+$num3 = 0;
+$num4 = 0;
+$counter = 0;
 
 if($gender ===NULL) 
   {}
@@ -60,7 +61,7 @@ else
      $result = fopen($file,"r") or die("Unable to open file!!");
     // fwrite($result, $person);
 
-$counter = 0;
+
 while(!feof($result))
 {
   $str = fgets($result);
@@ -77,11 +78,11 @@ fclose($result);
 foreach ($array as $person) {
   if($person[0] == "male")
   {
-    $num += 1;
+    $num ++;
   }
   if ($person[1] == "yes") 
   {
-    $num2 += 1;
+    $num2 ++;
   }
   if ($person[2] == "yes") 
   {
