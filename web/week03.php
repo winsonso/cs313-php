@@ -16,12 +16,14 @@ session_start();
 // else 
 // {
     //$_SESSION['counter'] = 1;
-   
+  if($gender ===NULL) {return;}
+  else
+  {
     $gender = $_POST["gender"];
     $age = $_POST["age"];
     $occuption = $_POST["occuption"];
     $interest = $_POST["interest"];
-  if($gender ===NULL) {echo "hoiwehf";}
+
 
 $space = " ";
 $gender = $gender.$space;;
@@ -100,6 +102,7 @@ echo "<center>People who like programming : Yes = ". $num4 ."     No = ".($count
 // fwrite($file,$final);
 // fclose($file);
  //}  
+}
 ?>
 </body>
 </html>
