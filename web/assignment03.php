@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +11,14 @@
 <h3>Survey</h3>
 <hr>
 <?php
+// // session_start();
+if(isset( $_SESSION['counter'] ) ) 
+{
+  echo "<center> You have already voted </center> ";
+}
+else 
+{
+    $_SESSION['counter'] = 1;
 
 echo '<form id="week03" action="week03.php" method="post">
             <span>What is your gender?</span>
@@ -32,6 +43,7 @@ echo '<form id="week03" action="week03.php" method="post">
 
         </form>
         <a href="week03.php">See the result</a>'
+}
 ?>
 </body>
 </html>
