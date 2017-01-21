@@ -16,20 +16,21 @@ session_start();
 // else 
 // {
     //$_SESSION['counter'] = 1;
-  if($gender ===NULL) {return;}
-  else
-  {
+
     $gender = $_POST["gender"];
     $age = $_POST["age"];
     $occuption = $_POST["occuption"];
     $interest = $_POST["interest"];
 
-
-$space = " ";
-$gender = $gender.$space;;
-$age = $age.$space;;
-$occuption = $occuption.$space;;
-$interest = $interest.$space;;
+if($gender ===NULL) 
+  {return;}
+else
+ {
+    $space = " ";
+    $gender = $gender.$space;;
+    $age = $age.$space;;
+    $occuption = $occuption.$space;;
+    $interest = $interest.$space;;
 
 
     $file = "./result.txt";
