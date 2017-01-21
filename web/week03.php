@@ -20,8 +20,13 @@ session_start();
     $occuption = $_POST["occuption"];
     $interest = $_POST["interest"];
 
+$num = 0;
+$num2 = 0;
+$num3 = 0;
+$num4 = 0;
+
 if($gender ===NULL) 
-  {echo "string";}
+  {}
 else
  {
     $_SESSION['counter'] = 1;
@@ -68,10 +73,7 @@ while(!feof($result))
 
 fclose($result);
 
-$num = 0;
-$num2 = 0;
-$num3 = 0;
-$num4 = 0;
+
 foreach ($array as $person) {
   if($person[0] == "male")
   {
