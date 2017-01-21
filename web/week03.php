@@ -8,14 +8,14 @@ session_start();
 </head>
 <body>
 <?php
-// session_start();
-if(isset( $_SESSION['counter'] ) ) 
-{
-  echo "<center> You have already voted </center> ";
-}
-else 
-{
-    $_SESSION['counter'] = 1;
+// // session_start();
+// if(isset( $_SESSION['counter'] ) ) 
+// {
+//   echo "<center> You have already voted </center> ";
+// }
+// else 
+// {
+    //$_SESSION['counter'] = 1;
    
     $gender = $_POST["gender"];
     $age = $_POST["age"];
@@ -87,7 +87,7 @@ foreach ($array as $person) {
     $num4 += 1;
   }
 }
-}
+
 echo "<center>Result</center><br>";
 echo "<center>People who did the survey :".$counter."</center><br>";
 echo "<center>Male = ".$num."     Female = ".($counter-$num)."</center><br>";
@@ -99,7 +99,7 @@ echo "<center>People who like programming : Yes = ". $num4 ."     No = ".($count
 // $final = ($t1 . "\n" . $t2 . "\n" . $t3 . "\n" . $t4 . "\n");
 // fwrite($file,$final);
 // fclose($file);
-   
+ //}  
 ?>
 </body>
 </html>
