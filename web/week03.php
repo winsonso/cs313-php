@@ -19,22 +19,74 @@ session_start();
     $occuption = $_POST["occuption"];
     $interest = $_POST["interest"];
 
-    $person = array(array('a','b','c'),array('aa','bb','bc'));
-    print_r($person);
-//     $var = 0;
-    $result = fopen("result.txt","w") or die("Unable to open file!!");
-    fwrite($result, $person);
-// while(!feof($result)){
-//    $array[$var] = fgets($result);
-//    $var ++;
-// }
-// fclose($result);
+
+
+
+
+    $file = "./result.txt";
+    
+    if (filesize('result.txt') == 0)
+    {
+        file_put_contents($file, $gender, FILE_APPEND);
+        file_put_contents($file, $age, FILE_APPEND);
+        file_put_contents($file, $occuption,FILE_APPEND);
+        file_put_contents($file, $interest, FILE_APPEND);
+    }
+    else
+    {
+        file_put_contents($file, "\n", FILE_APPEND);
+        file_put_contents($file, $gender, FILE_APPEND);
+        file_put_contents($file, $age, FILE_APPEND);
+        file_put_contents($file, $occuption,FILE_APPEND);
+        file_put_contents($file, $interest, FILE_APPEND);
+    }
+
+
+     $result = fopen($file,"r") or die("Unable to open file!!");
+    // fwrite($result, $person);
+
+$counter = 0;
+while(!feof($result))
+{
+  $str = fgets($result);
+  $array[$counter] = (str_word_count($str, 1));
+  $counter ++;
+}
+
+echo "toal is " . $counter;
+print_r($array);
+
+fclose($result);
+
+foreach ($array as $person) {
+  if($person[0] == "male")
+  {
+    $num += 1;
+  }
+  if ($person[1] == "yes") 
+  {
+    $num2 += 1;
+  }
+  if ($person[2] == "yes") 
+  {
+    $num3 += 1;
+  }
+  if ($person[3] == "yes") 
+  {
+    $num4 += 1;
+  }
+}
+echo "Male :".$num."\t Female : ".($counter-$num)."\n";
+echo "Yes :".$num2;
+echo "No :".($counter-$num3);
+echo "Yes :".$num4;
 // $t1 = ($array[0]+$happy);
 // $t2 = ($array[1] + $hunger);
 // $t3 = ($array[2] + $car);
 // $t4 = ($array[3] +$student);
-// echo "<center>Result</center>";
-// echo "<br/><center>People who are happy: ". $t1 ."</center>";
+
+echo "<center>Result</center>";
+echo "<br/><center>People who are happy: "."</center>";
 // echo "<br/><center>People who are happy: ". $t2 ."</center>";
 // echo "<br/><center>People who are happy: ". $t3 ."</center>";
 // echo "<br/><center>People who are happy: ". $t4 ."</center>";
