@@ -18,8 +18,18 @@ session_start();
     $age = $_POST["age"];
     $occuption = $_POST["occuption"];
     $interest = $_POST["interest"];
+// $gender="female";
+// $age="yes";
+// $occuption="yes";
+// $interest="yes";
 
+$space = " ";
+$gender = $gender.$space;;
+$age = $age.$space;;
+$occuption = $occuption.$space;;
+$interest = $interest.$space;;
 
+// echo $gender;
 
 
 
