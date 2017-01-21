@@ -14,6 +14,7 @@
 // {
     //$_SESSION['counter'] = 1;
 
+    $_SESSION['counter'] = 1;
     $gender = $_POST["gender"];
     $age = $_POST["age"];
     $occuption = $_POST["occuption"];
