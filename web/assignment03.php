@@ -15,8 +15,8 @@ session_start();
 // // session_start();
 if(isset( $_SESSION['counter'] ) ) 
 {
-  echo "<center> You have already voted </center><br> 
-          <a href="week03.php">See the result</a>';";
+  echo '<center> You have already voted </center><br> 
+          <a href="week03.php">See the result</a>';
 }
 else 
 {
