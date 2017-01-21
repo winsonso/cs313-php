@@ -27,7 +27,16 @@ if($gender ===NULL)
   $result = fopen("result.txt","r") or die("Unable to open file!!");
     // fwrite($result, $person);
 
-
+  if (filesize('result.txt') == 0)
+  {
+    $num = 0;
+    $num2 = 0;
+    $num3 = 0;
+    $num4 = 0;
+    $counter = 0;
+  }
+  else
+  {
   while(!feof($result))
   {
    $str = fgets($result);
@@ -60,6 +69,7 @@ if($gender ===NULL)
       $num4 += 1;
     }
   }
+}
 }
 else 
  {
@@ -132,7 +142,7 @@ foreach ($array as $person) {
   }
 }
 }
-echo "<center>Result</center><br>";
+echo "<center><h2>Result</h2></center><br>";
 echo "<center>People who did the survey :".$counter."</center><br>";
 echo "<center>Male = ".$num."     Female = ".($counter-$num)."</center><br>";
 echo "<center>People who are over 18 : Yes = ". $num2 ."     No = ".($counter-$num2)."</center><br>";
