@@ -20,7 +20,6 @@ if(isset( $_SESSION['counter'] ) )
 }
 else 
 {
-    $_SESSION['counter'] = 1;
 
 echo '<form id="week03" action="week03.php" method="post">
             <span>What is your gender?</span>
