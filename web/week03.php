@@ -20,17 +20,18 @@ session_start();
     $occuption = $_POST["occuption"];
     $interest = $_POST["interest"];
 
-$num = 0;
-$num2 = 0;
-$num3 = 0;
-$num4 = 0;
-$counter = 0;
+
 
 if($gender ===NULL) 
   {}
 else
  {
     $_SESSION['counter'] = 1;
+$num = 0;
+$num2 = 0;
+$num3 = 0;
+$num4 = 0;
+$counter = 0;
 
     $space = " ";
     $gender = $gender.$space;;
