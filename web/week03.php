@@ -6,21 +6,10 @@
 <body>
 <?php
 session_start();
-// if(isset( $_SESSION['counter'] ) ) 
-// {
-//   echo "<center> You have already voted </center> ";
-// }
-// else 
-// {
-    //$_SESSION['counter'] = 1;
-
-
     $gender = $_POST["gender"];
     $age = $_POST["age"];
     $occuption = $_POST["occuption"];
     $interest = $_POST["interest"];
-
-
 
 if($gender ===NULL)
 {
@@ -43,9 +32,6 @@ if($gender ===NULL)
    $array[$counter] = (str_word_count($str, 1));
    $counter ++;
   }
-
-// echo "toal is " . $counter;
-// print_r($array);
 
   fclose($result);
 
@@ -117,9 +103,6 @@ while(!feof($result))
   $counter ++;
 }
 
-// echo "toal is " . $counter;
-// print_r($array);
-
 fclose($result);
 
 
@@ -134,26 +117,20 @@ foreach ($array as $person) {
   }
   if ($person[2] == "yes") 
   {
-    $num3 += 1;
+    $num3 ++;
   }
   if ($person[3] == "yes") 
   {
-    $num4 += 1;
+    $num4 ++;
   }
 }
 }
-echo "<center><h2>Result</h2></center><br>";
+echo "<center><h2>Result</h2></center><hr>";
 echo "<center>People who did the survey :".$counter."</center><br>";
 echo "<center>Male = ".$num."     Female = ".($counter-$num)."</center><br>";
 echo "<center>People who are over 18 : Yes = ". $num2 ."     No = ".($counter-$num2)."</center><br>";
 echo "<center>People who are college student : Yes = ". $num3 ."     No = ".($counter-$num3)."</center><br>";
 echo "<center>People who like programming : Yes = ". $num4 ."     No = ".($counter-$num4)."</center><br>";
-// echo "<br/><center>People who are happy: ". $t4 ."</center>";
-// $file = fopen("result.txt","w") or die("can't open fine");
-// $final = ($t1 . "\n" . $t2 . "\n" . $t3 . "\n" . $t4 . "\n");
-// fwrite($file,$final);
-// fclose($file);
- //}  
 
 ?>
 </body>
