@@ -21,9 +21,11 @@
     $interest = $_POST["interest"];
 
 if($gender ===NULL) 
-  {return;}
+  {break;}
 else
  {
+    $_SESSION['counter'] = 1;
+
     $space = " ";
     $gender = $gender.$space;;
     $age = $age.$space;;
