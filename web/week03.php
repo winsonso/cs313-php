@@ -56,8 +56,8 @@ while(!feof($result))
   $counter ++;
 }
 
-echo "toal is " . $counter;
-print_r($array);
+// echo "toal is " . $counter;
+// print_r($array);
 
 fclose($result);
 
@@ -83,21 +83,13 @@ foreach ($array as $person) {
     $num4 += 1;
   }
 }
-// echo "Male :".$num."\t Female : ".($counter-$num)."\n";
-// echo "Yes :".$num2;
-// echo "No :".($counter-$num3);
-// echo "Yes :".$num4;
-// $t1 = ($array[0]+$happy);
-// $t2 = ($array[1] + $hunger);
-// $t3 = ($array[2] + $car);
-// $t4 = ($array[3] +$student);
 
 echo "<center>Result</center><br>";
-echo "<center>People who did a survey :".$counter."</center><br>";
-echo "<center>Male :".$num."\t Female : ".($counter-$num)."</center><br>";
-echo "<center>People who are over 18 : Yes ". $num2 ."\t No : ".($counter-$num2)."</center><br>";
-echo "<center>People who are college student : Yes ". $num3 ."\t No : ".($counter-$num3)."</center><br>";
-echo "<center>People who like programming : Yes ". $num4 ."\t No : ".($counter-$num4)."</center><br>";
+echo "<center>People who did the survey :".$counter."</center><br>";
+echo "<center>Male = ".$num."     Female = ".($counter-$num)."</center><br>";
+echo "<center>People who are over 18 : Yes = ". $num2 ."     No = ".($counter-$num2)."</center><br>";
+echo "<center>People who are college student : Yes = ". $num3 ."     No = ".($counter-$num3)."</center><br>";
+echo "<center>People who like programming : Yes = ". $num4 ."     No = ".($counter-$num4)."</center><br>";
 // echo "<br/><center>People who are happy: ". $t4 ."</center>";
 // $file = fopen("result.txt","w") or die("can't open fine");
 // $final = ($t1 . "\n" . $t2 . "\n" . $t3 . "\n" . $t4 . "\n");
