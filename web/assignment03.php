@@ -42,7 +42,7 @@ echo '<form id="week03" action="week03.php" method="post">
             <input type="submit" value="Submit">
 
         </form>
-        <a href="week03.php">See the result</a>'
+        <a href="week03.php">See the result</a>';
 }
 ?>
 </body>
