@@ -20,10 +20,10 @@ session_start();
     $occuption = $_POST["occuption"];
     $interest = $_POST["interest"];
 
-$num = 0;
-$num2 = 0;
-$num3 = 0;
-$num4 = 0;
+$num;
+$num2;
+$num3;
+$num4;
 
 if($gender ===NULL) 
   {}
