@@ -88,7 +88,7 @@ foreach ($array as $person) {
 // $t3 = ($array[2] + $car);
 // $t4 = ($array[3] +$student);
 
-echo "<center>Result</center>\n";
+echo "<center>Result</center><br>";
 echo "<center>People who did a survey :".$counter."</center>\n";
 echo "<center>Male :".$num."\t Female : ".($counter-$num)."</center>\n";
 echo "<center>People who are over 18 : Yes ". $num2 ."\t No : ".($counter-$num2)."</center>";
