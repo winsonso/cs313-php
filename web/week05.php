@@ -28,9 +28,9 @@
       echo '<ul>';
       while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 
-        echo '<li>';
+        echo '<a href="#"><li>';
         echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
-        echo '</li>';
+        echo '</li></a>';
       }
       echo '</ul>';
       ?>
