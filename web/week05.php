@@ -22,14 +22,17 @@
   <body>
      <h1>Scripture Resources</h1>
      <?php
-      $statement = $db->prepare("SELECT username, income, tithing others FROM person_ac");
+      $statement = $db->prepare("SELECT book, chapter, verse, content FROM scriptures");
       $statement->execute();
+
+      echo '<ul>';
       while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-        echo '<p>';
-        echo '<strong>' . $row['username'] . ' ' . $row['income'] . ':';
-        echo $row['tithing'] . '</strong>' . ' - ' . $row['others'];
-        echo '</p>';
+
+        echo '<li>';
+        echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
+        echo '</li>';
       }
+      echo '</ul>';
       ?>
   </body>
 </html>
