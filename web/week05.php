@@ -21,15 +21,15 @@
   </head>
   <body>
      <h1>Scripture Resources</h1>
-<!--         <form method="post" action="">
+        <form method="post" action="">
             <label for="searchval">Enter search term:</label>
             <input type="text" name="searchval" id="searchval">
             <button name="submit" type="submit">Go!</button>
-        </form> -->
-        <form action="week05_results.php" method="post">
+        </form>
+<!--         <form action="week05_results.php" method="post">
             Search: <input type="text" name="searchval" placeholder=" Search here ... "/>
             <input type="submit" value="Submit" />
-        </form>
+        </form> -->
 
 
 
