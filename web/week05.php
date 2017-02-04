@@ -65,17 +65,18 @@ if(isset($_POST['submit'])) {
     }
   }
   else{
-      $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
-      $statement->execute();
-      $counter = 1;
-      echo '<ul>';
-      while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-        echo '<a href="week05_results.php?id='.$counter.'"><li>';
-        echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
-        echo '</li></a>';
-        $counter++;
-      }
-      echo '</ul>';
+      // $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
+      // $statement->execute();
+      // $counter = 1;
+      // echo '<ul>';
+      // while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+      //   echo '<a href="week05_results.php?id='.$counter.'"><li>';
+      //   echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
+      //   echo '</li></a>';
+      //   $counter++;
+      // }
+      //echo '</ul>';
+    echo "string1111";
   }
 
 ?>
@@ -84,17 +85,17 @@ if(isset($_POST['submit'])) {
 <hr>
 
  <?php
-  // $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
-  // $statement->execute();
-  // $counter = 1;
-  // echo '<ul>';
-  // while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-  //   echo '<a href="week05_results.php?id='.$counter.'"><li>';
-  //   echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
-  //   echo '</li></a>';
-  //   $counter++;
-  // }
-  // echo '</ul>';
+  $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
+  $statement->execute();
+  $counter = 1;
+  echo '<ul>';
+  while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+    echo '<a href="week05_results.php?id='.$counter.'"><li>';
+    echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
+    echo '</li></a>';
+    $counter++;
+  }
+  echo '</ul>';
 
 
   ?>
