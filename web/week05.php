@@ -21,22 +21,30 @@
   </head>
   <body>
      <h1>Scripture Resources</h1>
-        <form method="post" action="">
-            <label for="searchval">Enter search term:</label>
-            <input type="text" name="searchval" id="searchval">
-            <button name="submit" type="submit">Go!</button>
-        </form>
-<!--         <form action="week05_results.php" method="post">
-            Search: <input type="text" name="searchval" placeholder=" Search here ... "/>
-            <input type="submit" value="Submit" />
-        </form> -->
 
-
-
+<form method="post" action="">
+    <label for="searchval">Enter search term:</label>
+    <input type="text" name="searchval" id="searchval">
+    <button name="submit" type="submit">Go!</button>
+</form>
 <?php
-include 'dbstuff.inc';
+
+  $dbUser = 'tvykcavenuypkg';
+  $dbPassword = 'e4cd5d6eca8fa1f7d9ead148580cc0c1b30cde2f37f4276da626ce47275eba0c';
+  $dbName = 'd38uii2m3augn0';
+  $dbHost = 'ec2-54-225-122-119.compute-1.amazonaws.com';
+  $dbPort = '5432';
+
+  try {
+    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+    echo "Opened database successfully\n";
+  } catch (PDOException $ex) {
+    echo "Error connecting to DB. Details: $ex";
+    die();
+  }
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include 'dbstuff.inc';
+    // include 'dbstuff.inc';
     $searchval = htmlspecialchars($_POST["searchval"]);
 
     echo "<br />";
@@ -45,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     foreach ($db->query($sqlstring) as $row)
     {
         //echo "<p><span id='scriptref'><a href='search_results.php?id=$row[0]'>$row[1] $row[2]:$row[3]</a></span></p>\n\n";
-      echo $results['book'] . ' '. $results['chapter']. ':'. $results['verse']. '-' . $results['content'];
+      echo $row[1];
     }
 }
 ?>

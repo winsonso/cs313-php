@@ -15,7 +15,7 @@
   $dbHost = 'ec2-54-225-122-119.compute-1.amazonaws.com';
   $dbPort = '5432';
 
-  try {
+ try {
     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
     echo "Opened database successfully\n";
   } catch (PDOException $ex) {
