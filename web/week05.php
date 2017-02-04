@@ -62,7 +62,7 @@ if(isset($_POST['submit'])) {
               echo '</li></a>';
             echo '</ul>';
         }
-        echo "??? is : ". $row;
+        echo "??? is : ". sizeof($row);
     }
   }
   else{
