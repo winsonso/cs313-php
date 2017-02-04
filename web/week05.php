@@ -27,8 +27,7 @@
 
       echo '<ul>';
       while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-
-        echo '<a href="#"><li>';
+        echo '<a href="week05_results.php?id=$row[id]"><li>';
         echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
         echo '</li></a>';
       }
