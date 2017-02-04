@@ -89,11 +89,11 @@ if(isset($_POST['submit'])) {
 <hr>
 <h2>Enter Your Favorite Scripture</h2>
 <form method="" action="">
-    <label for="book">Enter Book:</label>
+    <label for="book">Enter Book:&nbsp&nbsp&nbsp</label>
     <input type="text" name="book" id="book"><br>
     <label for="chapter">Enter Chapter:</label>
     <input type="text" name="chapter" id="chapter"><br>
-    <label for="verse">Enter Verse:</label>
+    <label for="verse">Enter Verse:&nbsp&nbsp&nbsp</label>
     <input type="text" name="book" id="verse"><br>
     <label for="content">Enter Content:</label>
     <input type="text" name="content" id="content"><br>
