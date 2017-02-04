@@ -24,12 +24,13 @@
      <?php
       $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
       $statement->execute();
-
+      $counter = 0;
       echo '<ul>';
       while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-        echo '<a href="week05_results.php?id="'.$row['id'].'><li>';
-        echo $row[0] . $row[1] . ' ' . $row['chapter'] . ':'. $row['verse'];
+        echo '<a href="week05_results.php?id="'.$counter.'><li>';
+        echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
         echo '</li></a>';
+        $counter++;
       }
       echo '</ul>';
 
