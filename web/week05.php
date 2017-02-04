@@ -52,11 +52,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     foreach ($db->query($sqlstring) as $row)
     {
         //echo "<p><span id='scriptref'><a href='search_results.php?id=$row[0]'>$row[1] $row[2]:$row[3]</a></span></p>\n\n";
-      echo $row[1];
+      echo $row[0];
     }
 }
-else{
-    $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
+
+?>
+
+
+
+
+ <?php
+  $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
   $statement->execute();
   $counter = 1;
   echo '<ul>';
@@ -67,24 +73,6 @@ else{
     $counter++;
   }
   echo '</ul>';
-}
-?>
-
-
-
-
- <?php
-  // $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
-  // $statement->execute();
-  // $counter = 1;
-  // echo '<ul>';
-  // while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-  //   echo '<a href="week05_results.php?id='.$counter.'"><li>';
-  //   echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
-  //   echo '</li></a>';
-  //   $counter++;
-  // }
-  // echo '</ul>';
 
 
   ?>
