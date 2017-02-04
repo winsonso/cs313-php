@@ -57,13 +57,13 @@ if(isset($_POST['submit'])) {
             //echo "<p><span id='scriptref'><a href='search_results.php?id=$row[0]'>$row[1] $row[2]:$row[3]</a></span></p>\n\n";
           //echo $row[0];
             echo '<ul>';
-              echo '<a href="week05_results.php?id='.$row[0].'"><li>';
-              echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
-              echo '</li></a>';
+            echo '<a href="week05_results.php?id='.$row[0].'"><li>';
+            echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
+            echo '</li></a>';
             echo '</ul>';
         }
         if(sizeof($row) == 0) {
-          echo "<strong>Not Found!!</strong>";
+          echo "<strong>Not Found!!</strong><br>";
           echo"<a href=\"week05.php\">Back to Scripture Resources - Search Page</a>";
         }
     }
@@ -87,7 +87,16 @@ if(isset($_POST['submit'])) {
 
 
 <hr>
-
+Enter Your Favorite Scripture
+<form method="" action="">
+    <label for="book">Enter Book:</label>
+    <input type="text" name="book" id="book">
+    <label for="chapter">Enter Chapter:</label>
+    <input type="text" name="chapter" id="chapter">
+    <label for="verse">Enter Verse:</label>
+    <input type="text" name="book" id="verse">
+    <button name="submit" type="submit">Submit</button>
+</form>
  <?php
   // $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
   // $statement->execute();
