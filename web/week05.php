@@ -24,7 +24,7 @@
      <?php
       $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
       $statement->execute();
-      $counter = 0;
+      $counter = 1;
       echo '<ul>';
       while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
         echo '<a href="week05_results.php?id='.$counter.'"><li>';

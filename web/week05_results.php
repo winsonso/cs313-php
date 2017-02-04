@@ -29,6 +29,6 @@ foreach ($db->query('SELECT * from scripture where id='.$_GET["id"]) as $row)
 }
 ?>
 <br/>
-<a href="scripture_search-2.php">Back to Scripture Resources - Search Page</a>
+<a href="week05.php">Back to Scripture Resources - Search Page</a>
 </body>
 </html>
