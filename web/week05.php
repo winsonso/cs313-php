@@ -27,11 +27,28 @@
             <button name="submit" type="submit">Go!</button>
         </form> -->
         <form action="week05_results.php" method="post">
-            Search: <input type="text" name="search" placeholder=" Search here ... "/>
+            Search: <input type="text" name="searchval" placeholder=" Search here ... "/>
             <input type="submit" value="Submit" />
         </form>
 
 
+
+<?php
+include 'dbstuff.inc';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include 'dbstuff.inc';
+    $searchval = htmlspecialchars($_POST["searchval"]);
+
+    echo "<br />";
+
+    $sqlstring = 'SELECT id, book, chapter, verse from scripture WHERE book = \''. html_entity_decode($searchval) .'\'';
+    foreach ($db->query($sqlstring) as $row)
+    {
+        //echo "<p><span id='scriptref'><a href='search_results.php?id=$row[0]'>$row[1] $row[2]:$row[3]</a></span></p>\n\n";
+      echo $results['book'] . ' '. $results['chapter']. ':'. $results['verse']. '-' . $results['content'];
+    }
+}
+?>
 
 
 
