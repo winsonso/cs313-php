@@ -50,6 +50,8 @@ if(isset($_POST['submit'])) {
         echo "<br />";
 
         $sqlstring = 'SELECT id, book, chapter, verse from scripture WHERE book = \''. html_entity_decode($searchval) .'\'';
+
+        echo "??? is : ".$db->query($sqlstring);
         foreach ($db->query($sqlstring) as $row)
         {
             //echo "<p><span id='scriptref'><a href='search_results.php?id=$row[0]'>$row[1] $row[2]:$row[3]</a></span></p>\n\n";
@@ -63,26 +65,36 @@ if(isset($_POST['submit'])) {
     }
   }
   else{
-    echo "string1";
+      $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
+      $statement->execute();
+      $counter = 1;
+      echo '<ul>';
+      while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+        echo '<a href="week05_results.php?id='.$counter.'"><li>';
+        echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
+        echo '</li></a>';
+        $counter++;
+      }
+      echo '</ul>';
   }
 
 ?>
 
 
-
+<hr>
 
  <?php
-  $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
-  $statement->execute();
-  $counter = 1;
-  echo '<ul>';
-  while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-    echo '<a href="week05_results.php?id='.$counter.'"><li>';
-    echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
-    echo '</li></a>';
-    $counter++;
-  }
-  echo '</ul>';
+  // $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
+  // $statement->execute();
+  // $counter = 1;
+  // echo '<ul>';
+  // while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+  //   echo '<a href="week05_results.php?id='.$counter.'"><li>';
+  //   echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
+  //   echo '</li></a>';
+  //   $counter++;
+  // }
+  // echo '</ul>';
 
 
   ?>
