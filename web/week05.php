@@ -49,13 +49,11 @@ if(isset($_POST['submit'])) {
 
         echo "<br />";
 
-        $sqlstring = 'SELECT id, book, chapter, verse from scripture WHERE LOWER book = \''. html_entity_decode($searchval) .'\'';
+        $sqlstring = 'SELECT id, book, chapter, verse from scripture WHERE book = \''. html_entity_decode($searchval) .'\'';
 
         
         foreach ($db->query($sqlstring) as $row)
         {
-            //echo "<p><span id='scriptref'><a href='search_results.php?id=$row[0]'>$row[1] $row[2]:$row[3]</a></span></p>\n\n";
-          //echo $row[0];
             echo '<ul>';
             echo '<a href="week05_results.php?id='.$row[0].'"><li>';
             echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
@@ -80,7 +78,6 @@ if(isset($_POST['submit'])) {
         $counter++;
       }
       echo '</ul>';
-    //echo "string1111";
   }
 
 ?>
