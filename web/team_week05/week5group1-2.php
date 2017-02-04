@@ -21,6 +21,6 @@ foreach ($db->query('SELECT * from scriptures') as $row)
 <br />
 <hr>
 <br />
-<a href="scripture_search.php">Scripture Search Page - Stretch Challenges</a>
+<a href="scripture_search-2.php">Scripture Search Page - Stretch Challenges</a>
 </body>
 </html>

@@ -31,6 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <br />
 <hr>
 <br />
-<a href="week5group1.php">Initial Core Requirements Page</a>
+<a href="week5group1-2.php">Initial Core Requirements Page</a>
 </body>
 </html>
