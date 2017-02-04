@@ -32,6 +32,17 @@
         echo '</li></a>';
       }
       echo '</ul>';
+
+foreach ($db->query('SELECT * from scripture where id= 1') as $row)
+{
+    echo "<p><span id='scriptref'>$row[1] $row[2]:$row[3]</span> - \"$row[4]\"</p>\n\n";
+}
+
       ?>
   </body>
 </html>
+
+foreach ($db->query('SELECT * from scripture where id='.$_GET["id"]) as $row)
+{
+    print "<p><span id='scriptref'>$row[1] $row[2]:$row[3]</span> - \"$row[4]\"</p>\n\n";
+}
