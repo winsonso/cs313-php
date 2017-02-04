@@ -43,7 +43,7 @@
   //   die();
   // }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" || isset($_POST['submit'])) {
     $searchval = htmlspecialchars($_POST["searchval"]);
 
     echo "<br />";
@@ -60,6 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo '</ul>';
     }
 }
+else{echo "string";}
 
 ?>
 
