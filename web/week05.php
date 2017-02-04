@@ -51,7 +51,7 @@ if(isset($_POST['submit'])) {
 
         $sqlstring = 'SELECT id, book, chapter, verse from scripture WHERE book = \''. html_entity_decode($searchval) .'\'';
 
-        echo "??? is : ".$db->query($sqlstring);
+        //echo "??? is : ".$db->query($sqlstring);
         foreach ($db->query($sqlstring) as $row)
         {
             //echo "<p><span id='scriptref'><a href='search_results.php?id=$row[0]'>$row[1] $row[2]:$row[3]</a></span></p>\n\n";
