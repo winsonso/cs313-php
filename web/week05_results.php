@@ -17,7 +17,6 @@
 
  try {
     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-    echo "Opened database successfully\n";
   } catch (PDOException $ex) {
     echo "Error connecting to DB. Details: $ex";
     die();

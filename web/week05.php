@@ -7,7 +7,7 @@
 
   try {
     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-    echo "Opened database successfully\n";
+    //echo "Opened database successfully\n";
   } catch (PDOException $ex) {
     echo "Error connecting to DB. Details: $ex";
     die();
@@ -28,20 +28,6 @@
     <button name="submit" type="submit">Go!</button>
 </form>
 <?php
-
-  // $dbUser = 'tvykcavenuypkg';
-  // $dbPassword = 'e4cd5d6eca8fa1f7d9ead148580cc0c1b30cde2f37f4276da626ce47275eba0c';
-  // $dbName = 'd38uii2m3augn0';
-  // $dbHost = 'ec2-54-225-122-119.compute-1.amazonaws.com';
-  // $dbPort = '5432';
-
-  // try {
-  //   $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-  //   echo "Opened database successfully\n";
-  // } catch (PDOException $ex) {
-  //   echo "Error connecting to DB. Details: $ex";
-  //   die();
-  // }
 
 if(isset($_POST['submit'])) {
     if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
@@ -96,21 +82,7 @@ if(isset($_POST['submit'])) {
     <input type="text" name="content" id="content"><br>
     <button name="submit" type="submit">Submit</button>
 </form>
- <?php
-  // $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
-  // $statement->execute();
-  // $counter = 1;
-  // echo '<ul>';
-  // while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-  //   echo '<a href="week05_results.php?id='.$counter.'"><li>';
-  //   echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
-  //   echo '</li></a>';
-  //   $counter++;
-  // }
-  // echo '</ul>';
 
-
-  ?>
   </body>
 </html>
 
