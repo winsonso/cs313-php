@@ -24,7 +24,7 @@
 
 <form method="post" action="">
     <label for="searchval">Enter search term:</label>
-    <input type="text" name="searchval" id="searchval">
+    <input type="text" name="searchval" id="searchval" placeholder=" Search by Name.. ">
     <button name="submit" type="submit">Go!</button>
 </form>
 <?php
@@ -44,7 +44,6 @@
   // }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // include 'dbstuff.inc';
     $searchval = htmlspecialchars($_POST["searchval"]);
 
     echo "<br />";
@@ -56,26 +55,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo $row[1];
     }
 }
+else{
+    $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
+  $statement->execute();
+  $counter = 1;
+  echo '<ul>';
+  while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+    echo '<a href="week05_results.php?id='.$counter.'"><li>';
+    echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
+    echo '</li></a>';
+    $counter++;
+  }
+  echo '</ul>';
+}
 ?>
 
 
 
 
-     <?php
-      $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
-      $statement->execute();
-      $counter = 1;
-      echo '<ul>';
-      while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-        echo '<a href="week05_results.php?id='.$counter.'"><li>';
-        echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
-        echo '</li></a>';
-        $counter++;
-      }
-      echo '</ul>';
+ <?php
+  // $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
+  // $statement->execute();
+  // $counter = 1;
+  // echo '<ul>';
+  // while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+  //   echo '<a href="week05_results.php?id='.$counter.'"><li>';
+  //   echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
+  //   echo '</li></a>';
+  //   $counter++;
+  // }
+  // echo '</ul>';
 
 
-      ?>
+  ?>
   </body>
 </html>
 
