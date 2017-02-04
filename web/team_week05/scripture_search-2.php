@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     echo "<br />";
 
-    $sqlstring = 'SELECT id, book, chapter, verse from scriptures WHERE book = \''. html_entity_decode($searchval) .'\'';
+    $sqlstring = 'SELECT id, book, chapter, verse from scripture WHERE book = \''. html_entity_decode($searchval) .'\'';
     foreach ($db->query($sqlstring) as $row)
     {
         echo "<p><span id='scriptref'><a href='search_results.php?id=$row[0]'>$row[1] $row[2]:$row[3]</a></span></p>\n\n";
