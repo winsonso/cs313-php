@@ -64,7 +64,7 @@ if(isset($_POST['submit'])) {
         }
         if(sizeof($row) == 0) {
           echo "<strong>Not Found!!</strong>";
-          echo"<a href="week05.php">Back to Scripture Resources - Search Page</a>";
+          echo"<a href=\"week05.php\">Back to Scripture Resources - Search Page</a>";
         }
     }
   }
