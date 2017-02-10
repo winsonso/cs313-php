@@ -71,15 +71,23 @@ if(isset($_POST['submit'])) {
 
 <hr>
 <h2>Enter Your Favorite Scripture</h2>
-<form method="" action="">
-    <label for="book">Enter Book:&nbsp&nbsp&nbsp&nbsp</label>
-    <input type="text" name="book" id="book"><br>
-    <label for="chapter">Enter Chapter:</label>
-    <input type="text" name="chapter" id="chapter"><br>
-    <label for="verse">Enter Verse:&nbsp&nbsp&nbsp&nbsp</label>
-    <input type="text" name="book" id="verse"><br>
-    <label for="content">Enter Content:</label>
-    <input type="text" name="content" id="content"><br>
+<form id="mainForm" action="insertTopic.php" method="POST">
+  <input type="text" id="txtBook" name="txtBook"></input>
+  <label for="txtBooK">Book</label>
+  <br /><br />
+
+  <input type="text" id="txtChapter" name="txtChapter"></input>
+  <label for="txtChapter">Chapter</label>
+  <br /><br />
+
+  <input type="text" id="txtVerse" name="txtVerse"></input>
+  <label for="txtVerse">Verse</label>
+  <br /><br />
+
+  <label for="txtContent">Content:</label><br />
+  <textarea id="txtContent" name="txtContent" rows="4" cols="50"></textarea>
+  <br /><br />
+
     <button name="submit" type="submit">Submit</button>
 </form>
 
