@@ -1,18 +1,4 @@
 
-
-// get the data from the POST
-$book = $_POST['txtBook'];
-$chapter = $_POST['txtChapter'];
-$verse = $_POST['txtVerse'];
-$content = $_POST['txtContent'];
-// For debugging purposes, you might include some echo statements like this
-// and then not automatically redirect until you have everything working.
-// echo "book=$book\n";
-// echo "chapter=$chapter\n";
-// echo "verse=$verse\n";
-// echo "content=$content\n";
-// we could (and should!) put additional checks here to verify that all this data is actually provided
-
   <!doctype html>
   <html>
   <head>
@@ -36,6 +22,7 @@ $content = $_POST['txtContent'];
       echo "New record created successfully";
   } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
+      echo "string ". $con->query($sql);
   }
   
   $conn->close();
