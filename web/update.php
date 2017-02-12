@@ -24,7 +24,7 @@ try
 {
 	// Add the Scripture
 	// We do this by preparing the query with placeholder values
-	$query = "UPDATE scripture SET book='$book', chapter='$chapter', verse='$verse' WHERE id='$id'";
+	$query = "UPDATE scripture SET book='$book', chapter='$chapter', verse='$verse', content='$content' WHERE id='$id'";
 	$statement = $db->prepare($query);
 
 	$statement->execute();

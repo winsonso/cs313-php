@@ -28,17 +28,18 @@ if(isset($_POST['submit'])) {
 
         $sqlstring = 'SELECT id, book, chapter, verse from scripture WHERE book = \''. html_entity_decode($searchval) .'\'';
 
-        echo '<ul>';
+        
         foreach ($db->query($sqlstring) as $row)
         {
+            echo '<ul>';
             echo '<a href="week05_results.php?id='.$row['id'].'"><li>';
             echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
             echo '</a> '."&nbsp&nbsp&nbsp&nbsp";
             echo '<a href="edit.php?id='.$row['id'].'">EDIT</a>'."&nbsp&nbsp&nbsp&nbsp";
             echo '<a href="delete.php?id='.$row['id'].'">DELETE</a></li>';
-            
+            echo '</ul>';    
         }
-        echo '</ul>';
+        
         if(sizeof($row) == 0) {
           echo "<strong>Not Found!!</strong><br>";
           echo"<a href=\"week05.php\">Back to Scripture Resources - Search Page</a>";
@@ -60,16 +61,18 @@ if(isset($_POST['submit'])) {
 
       $sqlstring = 'SELECT id, book, chapter, verse from scripture ORDER BY id';
 
-        echo '<ul>';
+        
         foreach ($db->query($sqlstring) as $row)
         {
+            echo '<ul>';
             echo '<a href="week05_results.php?id='.$row['id'].'"><li>';
             echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
             echo '</a> '."&nbsp&nbsp&nbsp&nbsp";
             echo '<a href="edit.php?id='.$row['id'].'">EDIT</a>'."&nbsp&nbsp&nbsp&nbsp";
             echo '<a href="delete.php?id='.$row['id'].'">DELETE</a></li>';
+            echo '</ul>';
         }
-        echo '</ul>';
+        
   }
 
 ?>
