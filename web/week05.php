@@ -33,7 +33,7 @@ if(isset($_POST['submit'])) {
         {
             echo '<ul>';
             echo '<a href="week05_results.php?id='.$row['id'].'"><li>';
-            echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
+            echo $row['id'].' '.$row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
             echo '</li></a>';
             echo '</ul>';
         }
