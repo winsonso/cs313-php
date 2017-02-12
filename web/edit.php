@@ -9,7 +9,7 @@
 <h2>Edit Your Favorite Scripture</h2>
 <form id="mainForm" action="" method="POST">
   <label for="txtBooK">Book</label>
-  <input type="text" id="txtBook" name="txtBook" value="<?php echo $profile['book']?>"></input>
+  <input type="text" id="txtBook" name="txtBook" value="<?php echo $_GET['book'];?>"></input>
   <br /><br />
 
   <label for="txtChapter">Chapter</label>
