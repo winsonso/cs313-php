@@ -5,11 +5,25 @@
 <title>Edit</title>
 </head>
 
+
+<?php
+
+$id=$_GET['id'];
+
+require("dbConnect.php");
+  $db= get_db();
+
+// Retrieve data from database 
+$query="SELECT * FROM scripture WHERE id='$id'";
+$statement = $db->prepare($query);
+$statement->execute();
+?>
+
 <body>
 <h2>Edit Your Favorite Scripture</h2>
 <form id="mainForm" action="" method="POST">
   <label for="txtBooK">Book</label>
-  <input type="text" id="txtBook" name="txtBook" value='<?php echo "string";?>'></input>
+  <input type="text" id="txtBook" name="txtBook" value='<?php echo $statement['book'];?>'></input>
   <br /><br />
 
   <label for="txtChapter">Chapter</label>
