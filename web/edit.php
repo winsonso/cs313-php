@@ -40,8 +40,14 @@ require("dbConnect.php");
   <textarea id="txtContent" name="txtContent" rows="4" cols="50" ><?php echo $row['content'];?></textarea>
   <br /><br />
 
-    <button name="submit" type="submit">Submit</button>
+    <button name="submit" type="submit">Update</button>
 </form>
+
+<?php
+if(isset($_POST['submit'])) {
+	echo "submit!!";
+}
+?>
 
   </body>
 </html>
