@@ -36,7 +36,8 @@ catch (Exception $ex)
 	echo "Error with DB. Details: $ex";
 	die();
 }
-
+header("Location: week05.php");
+die();
 
       
 // $book = $_POST['txtBook'];
