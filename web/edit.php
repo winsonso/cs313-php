@@ -14,9 +14,9 @@ require("dbConnect.php");
   $db= get_db();
 
   foreach ($db->query('SELECT * from scripture where id='.$_GET["id"]) as $row)
-{
-    print "<p><span id='scriptref'>$row[1] $row[2]:$row[3]</span> - \"$row[4]\"</p>\n\n";
-}
+// {
+//     print "<p><span id='scriptref'>$row[1] $row[2]:$row[3]</span> - \"$row[4]\"</p>\n\n";
+// }
 
 // // Retrieve data from database 
 // foreach ($db->query('SELECT * from scripture where id='.$_GET["id"]) as $row)
@@ -37,15 +37,15 @@ require("dbConnect.php");
   <br /><br />
 
   <label for="txtChapter">Chapter</label>
-  <input type="text" id="txtChapter" name="txtChapter"></input>
+  <input type="text" id="txtChapter" name="txtChapter" value='<?php echo $row['chapter'];?>'></input>
   <br /><br />
 
   <label for="txtVerse">Verse</label>
-  <input type="text" id="txtVerse" name="txtVerse"></input>
+  <input type="text" id="txtVerse" name="txtVerse" value='<?php echo $row['verse'];?>'></input>
   <br /><br />
 
   <label for="txtContent">Content:</label><br />
-  <textarea id="txtContent" name="txtContent" rows="4" cols="50"></textarea>
+  <textarea id="txtContent" name="txtContent" value='<?php echo $row['content'];?>' rows="4" cols="50"></textarea>
   <br /><br />
 
     <button name="submit" type="submit">Submit</button>
