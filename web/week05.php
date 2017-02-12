@@ -26,7 +26,7 @@ if(isset($_POST['submit'])) {
 
         echo "<br />";
 
-        $sqlstring = 'SELECT id, book, chapter, verse from scripture WHERE book = \''. html_entity_decode($searchval) .'\'';
+        $sqlstring = 'SELECT id, book, chapter, verse from scripture ORDER BY id WHERE book = \''. html_entity_decode($searchval) .'\'';
 
         
         foreach ($db->query($sqlstring) as $row)
