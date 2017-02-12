@@ -23,7 +23,7 @@ require("dbConnect.php");
 
 <body>
 <h2>Edit Your Favorite Scripture</h2>
-<form id="mainForm" action="" method="POST">
+<form id="mainForm" action="update.php" method="POST">
   <label for="txtBooK">Book</label>
   <input type="text" id="txtBook" name="txtBook" value='<?php echo $row['book'];?>'></input>
   <br /><br />
@@ -43,11 +43,6 @@ require("dbConnect.php");
     <button name="submit" type="submit">Update</button>
 </form>
 
-<?php
-if(isset($_POST['submit'])) {
-	echo "submit!!";
-}
-?>
 
   </body>
 </html>
