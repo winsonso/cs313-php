@@ -15,29 +15,29 @@ $chapter = $_POST['txtChapter'];
 $verse = $_POST['txtVerse'];
 $content = $_POST['txtContent'];
 
-echo "string" . $id . $book;
+//echo "string" . $id . $book;
 
 require("dbConnect.php");
   $db= get_db();
 
-// try
-// {
-// 	// Add the Scripture
-// 	// We do this by preparing the query with placeholder values
-// 	$query = "UPDATE $tbl_name SET name='$name', lastname='$lastname', email='$email' WHERE id='$id'";
-// 	$statement = $db->prepare($query);
+try
+{
+	// Add the Scripture
+	// We do this by preparing the query with placeholder values
+	$query = "UPDATE scripture SET book='$book', chapter='$chapter', verse='$verse' WHERE id='$id'";
+	$statement = $db->prepare($query);
 
-// 	$statement->execute();
-// 	//echo "New record created successfully";
+	$statement->execute();
+	echo "<strong><center>Updated record successfully!</center></strong>";
 
-// }
-// catch (Exception $ex)
-// {
-// 	// Please be aware that you don't want to output the Exception message in
-// 	// a production environment
-// 	echo "Error with DB. Details: $ex";
-// 	die();
-// }
+}
+catch (Exception $ex)
+{
+	// Please be aware that you don't want to output the Exception message in
+	// a production environment
+	echo "Error with DB. Details: $ex";
+	die();
+}
 ?>
 </body>
 </html>
