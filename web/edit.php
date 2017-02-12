@@ -10,8 +10,13 @@
 
 // $id=$_GET['id'];
 
-// require("dbConnect.php");
-//   $con= get_db();
+require("dbConnect.php");
+  $con= get_db();
+
+  foreach ($db->query('SELECT * from scripture where id='.$_GET["id"]) as $row)
+{
+    print "<p><span id='scriptref'>$row[1] $row[2]:$row[3]</span> - \"$row[4]\"</p>\n\n";
+}
 
 // // Retrieve data from database 
 // foreach ($db->query('SELECT * from scripture where id='.$_GET["id"]) as $row)
@@ -21,6 +26,7 @@
 //     $content = $row[3];
 // }
 // echo $book.$verse.$content;
+
 ?>
 
 <body>
