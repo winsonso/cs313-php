@@ -32,7 +32,7 @@ if(isset($_POST['submit'])) {
         foreach ($db->query($sqlstring) as $row)
         {
             echo '<ul>';
-            echo '<a href="week05_results.php?id='.$row[0].'"><li>';
+            echo '<a href="week05_results.php?id='.$row['id'].'"><li>';
             echo $row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
             echo '</li></a>';
             echo '</ul>';
