@@ -30,20 +30,4 @@ catch (Exception $ex)
 header("Location: week05.php");
 die();
 
-      
-// $book = $_POST['txtBook'];
-// $chapter = $_POST['txtChapter'];
-// $verse = $_POST['txtVerse'];
-// $content = $_POST['txtContent'];
-
-//       $sql = "INSERT INTO scripture (book, chapter, verse,content)
-//   VALUES ('".$book."','".$chapter."','".$verse."','".$content."')";
-//   if ($con->query($sql) === TRUE) {
-//       echo "New record created successfully";
-//   } else {
-//       echo "Error: " . $sql . "<br>" . $conn->error;
-//       echo "string ". $con->query($sql);
-//   }
-  
-//   $conn->close();
 ?>

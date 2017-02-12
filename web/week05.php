@@ -47,17 +47,6 @@ if(isset($_POST['submit'])) {
     }
   }
   else{
-      // $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
-      // $statement->execute();
-      // $counter = 1;
-      // echo '<ul>';
-      // while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      //   echo '<a href="week05_results.php?id='.$counter.'"><li>';
-      //   echo 'id: '.$row['id'].' ='.$row[0].$row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
-      //   echo '</li></a>';
-      //   $counter++;
-      // }
-      // echo '</ul>';
 
       $sqlstring = 'SELECT id, book, chapter, verse from scripture ORDER BY id';
 
