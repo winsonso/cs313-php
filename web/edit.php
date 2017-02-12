@@ -45,7 +45,7 @@ require("dbConnect.php");
   <br /><br />
 
   <label for="txtContent">Content:</label><br />
-  <textarea id="txtContent" name="txtContent" value='<?php echo $row[4];?>' rows="4" cols="50"></textarea>
+  <textarea id="txtContent" name="txtContent" rows="4" cols="50" ><?php echo $row[4];?></textarea>
   <br /><br />
 
     <button name="submit" type="submit">Submit</button>
