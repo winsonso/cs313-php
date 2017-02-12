@@ -14,9 +14,9 @@ require("dbConnect.php");
   $db= get_db();
 
 // Retrieve data from database 
-$query="SELECT * FROM scripture WHERE id='$id'";
-$statement = $db->prepare($query);
-$statement->execute();
+$sql="SELECT * FROM $tbl_name WHERE id='$id'";
+$result=mysql_query($sql);
+$statement=mysql_fetch_array($result);
 ?>
 
 <body>
