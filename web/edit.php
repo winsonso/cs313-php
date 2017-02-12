@@ -11,19 +11,23 @@
 $id=$_GET['id'];
 
 require("dbConnect.php");
-  $db= get_db();
+  $con= get_db();
 
 // Retrieve data from database 
-$sql="SELECT * FROM $tbl_name WHERE id='$id'";
-$result=mysql_query($sql);
-$statement=mysql_fetch_array($result);
+foreach ($db->query('SELECT * from scripture where id='.$_GET["id"]) as $row)
+{
+    $book = $row[1];
+    $verse = $row[2];
+    $content = $row[3];
+}
+echo $book.$verse.$content;
 ?>
 
 <body>
 <h2>Edit Your Favorite Scripture</h2>
 <form id="mainForm" action="" method="POST">
   <label for="txtBooK">Book</label>
-  <input type="text" id="txtBook" name="txtBook" value='<?php echo $statement['book'];?>'></input>
+  <input type="text" id="txtBook" name="txtBook" value='<?php echo $book;?>'></input>
   <br /><br />
 
   <label for="txtChapter">Chapter</label>
