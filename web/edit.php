@@ -8,19 +8,19 @@
 
 <?php
 
-$id=$_GET['id'];
+// $id=$_GET['id'];
 
-require("dbConnect.php");
-  $con= get_db();
+// require("dbConnect.php");
+//   $con= get_db();
 
-// Retrieve data from database 
-foreach ($db->query('SELECT * from scripture where id='.$_GET["id"]) as $row)
-{
-    $book = $row[1];
-    $verse = $row[2];
-    $content = $row[3];
-}
-echo $book.$verse.$content;
+// // Retrieve data from database 
+// foreach ($db->query('SELECT * from scripture where id='.$_GET["id"]) as $row)
+// {
+//     $book = $row[1];
+//     $verse = $row[2];
+//     $content = $row[3];
+// }
+// echo $book.$verse.$content;
 ?>
 
 <body>
