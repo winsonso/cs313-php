@@ -56,7 +56,7 @@ if(isset($_POST['submit'])) {
       // }
       // echo '</ul>';
 
-      $sqlstring = 'SELECT id, book, chapter, verse from scripture';
+      $sqlstring = 'SELECT id, book, chapter, verse from scripture ORDER BY id';
 
         echo '<ul>';
         foreach ($db->query($sqlstring) as $row)
