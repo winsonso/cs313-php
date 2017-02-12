@@ -11,7 +11,7 @@
 // $id=$_GET['id'];
 
 require("dbConnect.php");
-  $con= get_db();
+  $db= get_db();
 
   foreach ($db->query('SELECT * from scripture where id='.$_GET["id"]) as $row)
 {
