@@ -63,7 +63,7 @@ if(isset($_POST['submit'])) {
         {
             echo '<a href="week05_results.php?id='.$row['id'].'"><li>';
             echo 'id: '.$row['id'].$row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
-            echo '</a> &nbsp&nbsp';
+            echo '</a>'."\t";
             echo '<a href="#">DELETE</a></li>';
         }
         echo '</ul>';
