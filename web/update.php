@@ -29,6 +29,7 @@ try
 
 	$statement->execute();
 	echo "<strong><center>Updated record successfully!</center></strong>";
+	echo "<a href=\"week05.php\">Back to Scripture Resources - Search Page</a>";
 
 }
 catch (Exception $ex)
