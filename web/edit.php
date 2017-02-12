@@ -41,11 +41,11 @@ require("dbConnect.php");
   <br /><br />
 
   <label for="txtVerse">Verse</label>
-  <input type="text" id="txtVerse" name="txtVerse" value='<?php echo $row['verse'];?>'></input>
+  <input type="text" id="txtVerse" name="txtVerse" value='<?php echo $row['content'];?>'></input>
   <br /><br />
 
   <label for="txtContent">Content:</label><br />
-  <textarea id="txtContent" name="txtContent" value='<?php echo $row['content'];?>' rows="4" cols="50"></textarea>
+  <textarea id="txtContent" name="txtContent" value='<?php echo $row[4];?>' rows="4" cols="50"></textarea>
   <br /><br />
 
     <button name="submit" type="submit">Submit</button>
@@ -53,4 +53,3 @@ require("dbConnect.php");
 
   </body>
 </html>
-echo "$_GET['book'];"
