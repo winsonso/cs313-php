@@ -50,7 +50,7 @@ if(isset($_POST['submit'])) {
       echo '<ul>';
       while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
         echo '<a href="week05_results.php?id='.$counter.'"><li>';
-        echo $row['id'].' '.$row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
+        echo 'id: '.$row['id'].' ='.$row[0].$row['book'] . ' ' . $row['chapter'] . ':'. $row['verse'];
         echo '</li></a>';
         $counter++;
       }
