@@ -1,12 +1,3 @@
-
-  <!doctype html>
-  <html>
-  <head>
-  <meta charset="UTF-8">
-  <title>Insert</title>
-  </head>
-  
-  <body>
 <?php
 
 // get the data from the POST
@@ -26,7 +17,7 @@ try
 	$statement = $db->prepare($query);
 
 	$statement->execute();
-	echo "New record created successfully";
+	//echo "New record created successfully";
 
 }
 catch (Exception $ex)
@@ -56,5 +47,3 @@ die();
   
 //   $conn->close();
 ?>
-  </body>
-  </html>
