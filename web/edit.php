@@ -18,14 +18,6 @@ require("dbConnect.php");
 //     print "<p><span id='scriptref'>$row[1] $row[2]:$row[3]</span> - \"$row[4]\"</p>\n\n";
 // }
 
-// // Retrieve data from database 
-// foreach ($db->query('SELECT * from scripture where id='.$_GET["id"]) as $row)
-// {
-//     $book = $row[1];
-//     $verse = $row[2];
-//     $content = $row[3];
-// }
-// echo $book.$verse.$content;
 
 ?>
 
@@ -41,11 +33,11 @@ require("dbConnect.php");
   <br /><br />
 
   <label for="txtVerse">Verse</label>
-  <input type="text" id="txtVerse" name="txtVerse" value='<?php echo $row['content'];?>'></input>
+  <input type="text" id="txtVerse" name="txtVerse" value='<?php echo $row['verse'];?>'></input>
   <br /><br />
 
   <label for="txtContent">Content:</label><br />
-  <textarea id="txtContent" name="txtContent" rows="4" cols="50" ><?php echo $row[4];?></textarea>
+  <textarea id="txtContent" name="txtContent" rows="4" cols="50" ><?php echo $row['content'];?></textarea>
   <br /><br />
 
     <button name="submit" type="submit">Submit</button>
