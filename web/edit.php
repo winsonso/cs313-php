@@ -8,7 +8,7 @@
 
 <?php
 
-// $id=$_GET['id'];
+$id=$_GET['id'];
 
 require("dbConnect.php");
   $db= get_db();
@@ -23,7 +23,7 @@ require("dbConnect.php");
 
 <body>
 <h2>Edit Your Favorite Scripture</h2>
-<form id="mainForm" action="update.php" method="POST">
+<form id="mainForm" action="update.php?id= <?php echo $id;?>" method="POST">
   <label for="txtBooK">Book</label>
   <input type="text" id="txtBook" name="txtBook" value='<?php echo $row['book'];?>'></input>
   <br /><br />
