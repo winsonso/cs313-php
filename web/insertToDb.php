@@ -22,7 +22,7 @@ try
 {
 	// Add the Scripture
 	// We do this by preparing the query with placeholder values
-	$query = 'INSERT INTO scripture(book, chapter, verse, content) VALUES ('".$book."','".$chapter."','".$verse."','".$content."')';
+	$query = "INSERT INTO scripture (book, chapter, verse,content)VALUES ('".$book."','".$chapter."','".$verse."','".$content."')";
 	$statement = $db->prepare($query);
 
 	$statement->execute();
