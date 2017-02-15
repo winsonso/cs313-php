@@ -16,10 +16,7 @@ $db = get_db();
     foreach ($db->query($sqlstring) as $row)
     {
 
-    	 for ($i = 0; $i< 11; $i ++) { 
-    	 	echo $row[i].' ';
-    	 }
-    	echo "\n";
+    	echo $row['living_exp'] . ' ' . $row['tithing'] . ' '. $row['food_exp']. ' ' . $row['others'] . ' '. $row['saving'];
     }
 
 ?>
