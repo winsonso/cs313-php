@@ -6,7 +6,7 @@ $db = get_db();
 <html>
   <head>
     <title>Content</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/newstyle.css">
   </head>
   <body>
      <h1>Expense Tracker</h1>
