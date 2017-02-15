@@ -15,9 +15,10 @@ $db = get_db();
 
     foreach ($db->query($sqlstring) as $row)
     {
-    	for ($i = 0; $i< 11 ; $i ++) { 
-    		echo $row[i].' ';
-    	}
+
+    	// for ($i = 0; $i< 11 ; $i ++) { 
+    	 	echo $row[0].' ';
+    	// }
     	
     }
 
