@@ -15,6 +15,7 @@ $db = get_db();
 
     foreach ($db->query($sqlstring) as $row)
     {
+    	echo "<table><tr><th>User</th><th>Date</th><th>Living Expense</th><th>Food Expense</th><th>Tithing</th><th>Others</th><th>Saving</th></tr></table>";
 
     	echo $row['living_exp'] . ' ' . $row['tithing'] . ' '. $row['food_exp']. ' ' . $row['others'] . ' '. $row['saving'];
     }
