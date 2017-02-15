@@ -17,9 +17,9 @@ $db = get_db();
     {
 
     	 for ($i = 0; $i< 11; $i ++) { 
-    	 	echo $row[0].' ';
+    	 	echo $row[i].' ';
     	 }
-    	
+    	echo "\n";
     }
 
 ?>
