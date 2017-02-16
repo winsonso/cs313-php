@@ -55,6 +55,7 @@
     </div>
   </div>
   <br />
+  
   <form method="post" id="login" name="login">
   <div id="logindiv">
     <div class="row">
@@ -88,6 +89,7 @@
     </div>
   </div>
   </form>
+  
   <form method="post" id="reg" name="reg">
   <div style="Display: none" id="regdiv">
     <div class="row">
