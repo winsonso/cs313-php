@@ -15,19 +15,19 @@
 // get the data from the POST
 $username = $_POST['txtUser'];
 $password = $_POST['txtPassword'];
-if (!isset($username) || $username == ""
-	|| !isset($password) || $password == "")
-{
-	header("Location: signUp.php");
-	die(); // we always include a die after redirects.
-}
+// if (!isset($username) || $username == ""
+// 	|| !isset($password) || $password == "")
+// {
+// 	header("Location: signUp.php");
+// 	die(); // we always include a die after redirects.
+// }
 echo "username=".$username;
 echo "pw=".$password;
 // Let's not allow HTML in our usernames. It would be best to also detect this before
 // submitting the form and preven the submission.
-$username = htmlspecialchars($username);
+//$username = htmlspecialchars($username);
 // Get the hashed password.
-$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+//$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 // Connect to the database
 echo "username2=".$username;
 echo "pw2=".$hashedPassword;
@@ -36,7 +36,7 @@ require("dbConnect.php");
 $db = get_db();
 try
 {
-	$query = "INSERT INTO account(username, password) VALUES('".$username."','".$hashedPassword."')";
+	$query = "INSERT INTO account(username, password) VALUES('".$username."','".$password."')";
 	$statement = $db->prepare($query);
 	// $statement->bindValue(':username', $username);
 	// // **********************************************
