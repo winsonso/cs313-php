@@ -13,7 +13,7 @@
 ***********************************************************/
 // If you have an earlier version of PHP (earlier than 5.5)
 // You need to download and include password.php.
-//require("password.php"); // used for password hashing.
+require("password.php"); // used for password hashing.
 session_start();
 $badLogin = false;
 // First check to see if we have post variables, if not, just
