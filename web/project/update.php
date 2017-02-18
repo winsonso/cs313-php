@@ -34,7 +34,7 @@ try
 {
 	// Add the Scripture
 	// We do this by preparing the query with placeholder values
-	$query = "UPDATE record SET living_exp='$living_exp', tithing='$tithing', food_exp='$food_exp', others='$others', saving='$saving', month='$month', year='$year' WHERE id='$record_id'";
+	$query = "UPDATE record SET living_exp='$living_exp', tithing='$tithing', food_exp='$food_exp', others='$others', saving='$saving', month='$month', year='$year' WHERE record_id='$record_id'";
 	$statement = $db->prepare($query);
 
 	$statement->execute();
