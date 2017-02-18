@@ -1,32 +1,30 @@
 <?php
 
-$id=$_GET['id'];
+$record_id=$_GET['id'];
 
 require("dbConnect.php");
   $db= get_db();
 
-  echo "id is : ".$id;
+try
+{
+	// Add the Scripture
+	// We do this by preparing the query with placeholder values
+	$query = "DELETE FROM record WHERE record_id = '".$record_id."'";
+	$statement = $db->prepare($query);
 
-// try
-// {
-// 	// Add the Scripture
-// 	// We do this by preparing the query with placeholder values
-// 	$query = "DELETE FROM record WHERE record_id = '".$id."'";
-// 	$statement = $db->prepare($query);
+	$statement->execute();
+	//echo "New record created successfully";
 
-// 	$statement->execute();
-// 	//echo "New record created successfully";
-
-// }
-// catch (Exception $ex)
-// {
-// 	// Please be aware that you don't want to output the Exception message in
-// 	// a production environment
-// 	echo "Error with DB. Details: $ex";
-// 	die();
-// }
-// header("Location: showCxt.php");
-// die();
+}
+catch (Exception $ex)
+{
+	// Please be aware that you don't want to output the Exception message in
+	// a production environment
+	echo "Error with DB. Details: $ex";
+	die();
+}
+header("Location: showCxt.php");
+die();
 
 
 ?>
