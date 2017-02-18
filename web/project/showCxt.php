@@ -24,7 +24,7 @@ $db = get_db();
      <h1>Expense Tracker</h1>
      Your username is: <?= $username ?><br />
 <?php
-    $sqlstring = "SELECT * FROM record INNER JOIN account ON record.ac_id = login.id WHERE login.id = 1 ORDER BY id";
+    $sqlstring = "SELECT * FROM record INNER JOIN login ON record.ac_id = login.id WHERE login.username ='". $username."' ORDER BY id";
     //$statement->bindValue(':username', $username);
     echo "<table><tr><th>User</th><th>Date</th><th>Living Expense</th><th>Food Expense</th><th>Tithing</th><th>Others</th><th>Saving</th></tr>";
     foreach ($db->query($sqlstring) as $row)
