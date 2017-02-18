@@ -13,7 +13,7 @@
 ***********************************************************/
 // If you have an earlier version of PHP (earlier than 5.5)
 // You need to download and include password.php.
-require("password.php"); // used for password hashing.
+//require("password.php"); // used for password hashing.
 session_start();
 $badLogin = false;
 // First check to see if we have post variables, if not, just
@@ -26,7 +26,7 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
 	// Connect to the DB
 	require("dbConnect.php");
 	$db = get_db();
-	$query = 'SELECT password FROM account WHERE username=:username';
+	$query = 'SELECT password FROM login WHERE username=:username';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':username', $username);
 	$result = $statement->execute();
