@@ -40,5 +40,5 @@ th, td {
 tr:nth-child(even){background-color: #f2f2f2}
 
 a{ color: green; }
-a:hover {text-decoration: underline;}
-a #signOut: hover {font-size: 150%;}
+a:hover, a:active {text-decoration: underline;}
+a #signOut: hover, a #signOut:active {font-size: 150%;}
