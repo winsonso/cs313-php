@@ -30,6 +30,7 @@ else
 <?php
 
 $record_id=$_GET['id'];
+//echo "record_id : ".$record_id;
 
 require("dbConnect.php");
   $db= get_db();
@@ -42,7 +43,7 @@ require("dbConnect.php");
 <body>
 <h2>Edit Your Record</h2>
 
-    <form id="mainForm" action="update.php" method="POST">
+    <form id="mainForm" action="update.php?id= <?php echo $record_id;?>" method="POST">
       <label for="">Date</label>
       <select name ="month" value='<?php echo $row['month'];?>'>
         <option value="Jan">Jan</option>
