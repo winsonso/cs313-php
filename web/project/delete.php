@@ -5,26 +5,28 @@ $id=$_GET['id'];
 require("dbConnect.php");
   $db= get_db();
 
-try
-{
-	// Add the Scripture
-	// We do this by preparing the query with placeholder values
-	$query = "DELETE FROM record WHERE record_id = '".$id."'";
-	$statement = $db->prepare($query);
+  echo "id is : ".$id;
 
-	$statement->execute();
-	//echo "New record created successfully";
+// try
+// {
+// 	// Add the Scripture
+// 	// We do this by preparing the query with placeholder values
+// 	$query = "DELETE FROM record WHERE record_id = '".$id."'";
+// 	$statement = $db->prepare($query);
 
-}
-catch (Exception $ex)
-{
-	// Please be aware that you don't want to output the Exception message in
-	// a production environment
-	echo "Error with DB. Details: $ex";
-	die();
-}
-header("Location: showCxt.php");
-die();
+// 	$statement->execute();
+// 	//echo "New record created successfully";
+
+// }
+// catch (Exception $ex)
+// {
+// 	// Please be aware that you don't want to output the Exception message in
+// 	// a production environment
+// 	echo "Error with DB. Details: $ex";
+// 	die();
+// }
+// header("Location: showCxt.php");
+// die();
 
 
 ?>
