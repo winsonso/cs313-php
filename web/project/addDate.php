@@ -4,6 +4,14 @@
     <title>Content</title>
     <link rel="stylesheet" href="css/newstyle.css">
   </head>
+  <script>
+    function isNumberKey(evt){
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+        return true;
+    }    
+  </script>
   <body>
     <h2>ADD DATA</h2>
     <form id="mainForm" action="insertToDb.php" method="POST">
@@ -22,30 +30,33 @@
         <option value="Nov">Nov</option>
         <option value="Dec">Dec</option>
       </select>
-      <input type="text" id="year" name="year" placeholder="YEAR" length="4"></input>
+      <input type="text" id="year" name="year" placeholder="YEAR" size="4" onkeypress="return isNumberKey(event)"></input>
       <br /><br />
 
       <label for="living_exp">Living Expense</label>
-      <input type="text" id="living_exp" name="living_exp"></input>
+      <input type="text" id="living_exp" name="living_exp" onkeypress="return isNumberKey(event)"></input>
       <br /><br />
 
       <label for="food_exp">Food Expense</label>
-      <input type="text" id="food_exp" name="food_exp"></input>
+      <input type="text" id="food_exp" name="food_exp" onkeypress="return isNumberKey(event)"></input>
       <br /><br />
 
       <label for="tithing">Tithing</label><br />
-      <input id="tithing" name="tithing" ></input>
+      <input type="text" id="tithing" name="tithing" onkeypress="return isNumberKey(event)" ></input>
       <br /><br />
 
       <label for="others">Others</label><br />
-      <input id="others" name="others" ></input>
+      <input type="text" id="others" name="others" onkeypress="return isNumberKey(event)" ></input>
       <br /><br />
 
       <label for="saving">Saving</label><br />
-      <input id="saving" name="saving" ></input>
+      <input type="text" id="saving" name="saving" onkeypress="return isNumberKey(event)" ></input>
       <br /><br />
 
         <button name="submit" type="submit">Submit</button>
     </form>
   </body>
 </html>
+
+
+
