@@ -29,13 +29,13 @@ $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 // Connect to the database
 require("dbConnect.php");
 $db = get_db();
-$query = 'INSERT INTO login(username, password) VALUES(:username, :password)';
+$query = "INSERT INTO login(username, password) VALUES('".$username."','".$hashedPassword."')";
 $statement = $db->prepare($query);
-$statement->bindValue(':username', $username);
-// **********************************************
-// NOTICE: We are submitting the hashed password!
-// **********************************************
-$statement->bindValue(':password', $hashedPassword);
+// $statement->bindValue(':username', $username);
+// // **********************************************
+// // NOTICE: We are submitting the hashed password!
+// // **********************************************
+// $statement->bindValue(':password', $hashedPassword);
 $statement->execute();
 // finally, redirect them to the sign in page
 header("Location: signIn.php");
