@@ -26,7 +26,7 @@ $db = get_db();
      <button type="button"><a href="addDate.php">ADD YOUR RECORD!</a></button>
 <?php
     $sql = "SELECT id FROM login WHERE username ='". $username."'";
-    foreach ($db->query($sqlstring) as $_id)
+    foreach ($db->query($sql) as $_id)
     {
       $_SESSION['login_id'] = $_id['id'];
     }
