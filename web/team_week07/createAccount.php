@@ -25,7 +25,7 @@ echo "username=".$username;
 echo "pw=".$password;
 // Let's not allow HTML in our usernames. It would be best to also detect this before
 // submitting the form and preven the submission.
-//$username = htmlspecialchars($username);
+$username = htmlspecialchars($username);
 // Get the hashed password.
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 // Connect to the database
@@ -37,7 +37,7 @@ try
 {
 	echo "username2=".$username;
 echo "pw2=".$hashedPassword;
-	$query = "INSERT INTO account(username, password) VALUES('".$username."','".$hashedPassword."')";
+	$query = "INSERT INTO account(username, password) VALUES(".$username.",".$hashedPassword.")";
 	$statement = $db->prepare($query);
 	// $statement->bindValue(':username', $username);
 	// // **********************************************
