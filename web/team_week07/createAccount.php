@@ -43,7 +43,7 @@ echo "pw2=".$hashedPassword;
 	// // **********************************************
 	// // NOTICE: We are submitting the hashed password!
 	// // **********************************************
-	$statement->bindValue(':password', $password);
+	$statement->bindValue(':password', $hashedPassword);
 	$statement->execute();
 	echo "New record created successfully";
 }
