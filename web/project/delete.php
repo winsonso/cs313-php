@@ -9,7 +9,7 @@ try
 {
 	// Add the Scripture
 	// We do this by preparing the query with placeholder values
-	$query = "DELETE FROM scripture WHERE ID = '".$id."'";
+	$query = "DELETE FROM record WHERE record_id = '".$id."'";
 	$statement = $db->prepare($query);
 
 	$statement->execute();
@@ -23,7 +23,7 @@ catch (Exception $ex)
 	echo "Error with DB. Details: $ex";
 	die();
 }
-header("Location: week05.php");
+header("Location: showCxt.php");
 die();
 
 
