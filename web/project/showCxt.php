@@ -45,7 +45,7 @@ $db = get_db();
 
 ?>
 <br>
-<a id="signOut" href="signOut.php">Sign Out</a>
+<a class="sign" href="signOut.php">Sign Out</a>
 
 
   </body>
