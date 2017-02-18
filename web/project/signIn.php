@@ -43,12 +43,25 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
 
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Sign In</title>
-</head>
+  <head>
+    <title>Sign In</title>
+    <link rel="stylesheet" href="css/newstyle.css">
+  </head>
+<style type="text/css">
+
+
+.login {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 20px 20px;
+  width: 310px;
+  background: white;
+  border-radius: 3px;
+
+</style>
 
 <body>
-<div>
+
 
 <?php
 if ($badLogin)
@@ -57,26 +70,27 @@ if ($badLogin)
 }
 ?>
 
-<h1>Login to Web App</h1>
+<div class="login">
+	<h1>Login to Web App</h1>
 
-<form id="mainForm" action="signIn.php" method="POST">
+	<form id="mainForm" action="signIn.php" method="POST">
 
-	<label for="txtUser">Username</label>
-	<input type="text" id="txtUser" name="txtUser" placeholder="Username" required>
+		<label for="txtUser">Username</label>
+		<input type="text" id="txtUser" name="txtUser" placeholder="Username or Email" required>
+		<br /><br />
+
+		<label for="txtPassword">Password</label>
+		<input type="password" id="txtPassword" name="txtPassword" placeholder="Password" required>
+		<br /><br />
+
+		<button type="submit">Login</button>
+
+	</form>
+
+
 	<br /><br />
 
-	<label for="txtPassword">Password</label>
-	<input type="password" id="txtPassword" name="txtPassword" placeholder="Password" required>
-	<br /><br />
-
-	<button type="submit">Login</button>
-
-</form>
-
-
-<br /><br />
-
-Or <a href="signUp.php">Sign up</a> for a new account.
+	Or <a href="signUp.php">Sign up</a> for a new account.
 
 </div>
 
