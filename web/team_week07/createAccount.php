@@ -29,7 +29,7 @@ $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 // Connect to the database
 require("dbConnect.php");
 $db = get_db();
-$query = "INSERT INTO login(username, password) VALUES('".$username."','".$hashedPassword."')";
+$query = "INSERT INTO account(username, password) VALUES('".$username."','".$hashedPassword."')";
 $statement = $db->prepare($query);
 // $statement->bindValue(':username', $username);
 // // **********************************************
