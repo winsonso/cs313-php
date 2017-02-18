@@ -27,9 +27,10 @@ echo "pw=".$password;
 // submitting the form and preven the submission.
 //$username = htmlspecialchars($username);
 // Get the hashed password.
-$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+$password = md5($password);
 // Connect to the database
-$password = $hashedPassword;
+//$password = $hashedPassword;
 
 require("dbConnect.php");
 $db = get_db();
