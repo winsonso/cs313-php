@@ -1,4 +1,16 @@
+
 <?php
+session_start();
+if (isset($_SESSION['username']))
+{
+  $username = $_SESSION['username'];
+}
+else
+{
+  header("Location: signIn.php");
+  die(); // we always include a die after redirects.
+}
+
 require("dbConnect.php");
 $db = get_db();
 ?>
@@ -10,6 +22,7 @@ $db = get_db();
   </head>
   <body>
      <h1>Expense Tracker</h1>
+     Your username is: <?= $username ?><br />
 <?php
     $sqlstring = 'SELECT * FROM record INNER JOIN account ON record.ac_id = account.id WHERE account.id = 1 ORDER BY id';
 
@@ -23,6 +36,7 @@ $db = get_db();
     echo "</table>";
 
 ?>
+<a href="signOut.php">Sign Out</a>
 
 
   </body>
