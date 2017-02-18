@@ -37,13 +37,13 @@ try
 {
 	echo "username2=".$username;
 echo "pw2=".$hashedPassword;
-	$query = "INSERT INTO account(username, password) VALUES(".$username.",".$hashedPassword.")";
+	$query = "INSERT INTO account(username, password) VALUES(:username, :password)";
 	$statement = $db->prepare($query);
-	// $statement->bindValue(':username', $username);
+	$statement->bindValue(':username', $username);
 	// // **********************************************
 	// // NOTICE: We are submitting the hashed password!
 	// // **********************************************
-	// $statement->bindValue(':password', $hashedPassword);
+	$statement->bindValue(':password', $hashedPassword);
 	$statement->execute();
 	echo "New record created successfully";
 }
