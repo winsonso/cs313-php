@@ -29,8 +29,8 @@ $db = get_db();
     echo "<table><tr><th>User</th><th>Date</th><th>Living Expense</th><th>Food Expense</th><th>Tithing</th><th>Others</th><th>Saving</th></tr>";
     foreach ($db->query($sqlstring) as $row)
     {
-    	echo "<tr><td>".$row['username']."</td><td>".$row['date']."</td><td>".$row['living_exp']."</td><td>".$row['food_exp']."</td><td>".$row['tithing']."</td><td>".$row['others']."</td><td>".$row['saving']."</td><td><button type=\"button\"><a href=\"#\">EDIT</a></button></td><td><button type=\"button\"><a href=\"#\">DELETE</a></button></td></tr>";
-    	//echo $row['living_exp'] . ' ' . $row['tithing'] . ' '. $row['food_exp']. ' ' . $row['others'] . ' '. $row['saving'];
+    	//echo "<tr><td>".$row['username']."</td><td>".$row['date']."</td><td>".$row['living_exp']."</td><td>".$row['food_exp']."</td><td>".$row['tithing']."</td><td>".$row['others']."</td><td>".$row['saving']."</td><td><button type=\"button\"><a href=\"#\">EDIT</a></button></td><td><button type=\"button\"><a href=\"#\">DELETE</a></button></td></tr>";
+    	echo $row[0] . ' ' . $row['tithing'] . ' '. $row['food_exp']. ' ' . $row['others'] . ' '. $row['saving'];
     }
 
     echo "</table>";
@@ -41,3 +41,5 @@ $db = get_db();
 
   </body>
  </html>
+
+ SELECT * FROM record INNER JOIN login ON record.ac_id = login.id WHERE login.username = 'winson' ORDER BY record_id;
