@@ -9,5 +9,6 @@
 //require("password.php"); // used for password hashing.
 session_start();
 unset($_SESSION['username']);
+unset($_SESSION['login_id']);
 header("Location: signIn.php");
 die(); // we always include a die after redirects.
