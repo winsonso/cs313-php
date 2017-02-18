@@ -44,4 +44,4 @@ a{
 	text-decoration: none;
 }
 a:hover, a:active {text-decoration: underline;}
-a.sign: hover, a.sign:active {font-size: 140%;}
+a.sign:hover, a.sign:active {font-size: 140%;}
