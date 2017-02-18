@@ -22,7 +22,7 @@ $food_exp = $_POST['food_exp'];
 $tithing = $_POST['tithing'];	
 $others = $_POST['others'];
 $saving = $_POST['saving'];
-$date = $month.' '.$year;
+//$date = $month.' '.$year;
 
 
 require("dbConnect.php");
@@ -33,7 +33,7 @@ try
 	// Add the Scripture
 	// We do this by preparing the query with placeholder values
 
-	$query = "INSERT INTO record (living_exp, tithing, food_exp, others, saving, ac_id, date)VALUES (".$living_exp.",".$tithing.",".$food_exp.",".$others.",".$saving.",".$login_id.",'".$date."')";
+	$query = "INSERT INTO record (living_exp, tithing, food_exp, others, saving, ac_id, month,year)VALUES (".$living_exp.",".$tithing.",".$food_exp.",".$others.",".$saving.",".$login_id.",'".$month."','".$year."')";
 
 	$statement = $db->prepare($query);
 

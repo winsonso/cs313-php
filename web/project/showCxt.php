@@ -23,14 +23,14 @@ $db = get_db();
   <body>
      <h1>Expense Tracker</h1>
      Hello: <?= $username ?><br />
-     <button type=\"button\"><a href=\"addDate.php\">ADD YOUR RECORD!</a></button>
+     <button type="button"><a href="addDate.php">ADD YOUR RECORD!</a></button>
 <?php
     $sqlstring = "SELECT * FROM record INNER JOIN login ON record.ac_id = login.id WHERE login.username ='". $username."' ORDER BY id";
     //$statement->bindValue(':username', $username);
     echo "<table><tr><th>User</th><th>Date</th><th>Living Expense</th><th>Food Expense</th><th>Tithing</th><th>Others</th><th>Saving</th></tr>";
     foreach ($db->query($sqlstring) as $row)
     {
-    	echo "<tr><td>".$row['username']."</td><td>".$row['date']."</td><td>".$row['living_exp']."</td><td>".$row['food_exp']."</td><td>".$row['tithing']."</td><td>".$row['others']."</td><td>".$row['saving']."</td><td><button type=\"button\"><a href=\"edit.php?id=".$row['record_id']."\">EDIT</a></button></td><td><button type=\"button\"><a href=\"delete.php?id=".$row['record_id']."\">DELETE</a></button></td></tr>";
+    	echo "<tr><td>".$row['username']."</td><td>".$row['month'].' '.$row['year']."</td><td>".$row['living_exp']."</td><td>".$row['food_exp']."</td><td>".$row['tithing']."</td><td>".$row['others']."</td><td>".$row['saving']."</td><td><button type=\"button\"><a href=\"edit.php?id=".$row['record_id']."\">EDIT</a></button></td><td><button type=\"button\"><a href=\"delete.php?id=".$row['record_id']."\">DELETE</a></button></td></tr>";
     	//echo $row[0] . ' ' . $row['tithing'] . ' '. $row['food_exp']. ' ' . $row['others'] . ' '. $row['saving'];
       $_SESSION['login_id'] = $row['id'];
     }
