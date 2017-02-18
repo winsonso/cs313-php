@@ -1,3 +1,16 @@
+<?php
+session_start();
+if (isset($_SESSION['username']))
+{
+  $username = $_SESSION['username'];
+}
+else
+{
+  header("Location: signIn.php");
+  die(); // we always include a die after redirects.
+}
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,7 +29,7 @@
     <h2>ADD DATA</h2>
     <form id="mainForm" action="insertToDb.php" method="POST">
       <label for="txtBooK">Date</label>
-      <select>
+      <select name ="month">
         <option value="Jan">Jan</option>
         <option value="Feb">Feb</option>
         <option value="Mar">Mar</option>
@@ -33,24 +46,24 @@
       <input type="text" id="year" name="year" placeholder="YEAR" size="4" onkeypress="return isNumberKey(event)"></input>
       <br /><br />
 
-      <label for="living_exp">Living Expense</label>
-      <input type="text" id="living_exp" name="living_exp" onkeypress="return isNumberKey(event)"></input>
+      <label for="living_exp">Living Expense</label><br />
+      <input type="text" id="living_exp" name="living_exp" placeholder="number only.." onkeypress="return isNumberKey(event)"></input>
       <br /><br />
 
-      <label for="food_exp">Food Expense</label>
-      <input type="text" id="food_exp" name="food_exp" onkeypress="return isNumberKey(event)"></input>
+      <label for="food_exp">Food Expense</label><br />
+      <input type="text" id="food_exp" name="food_exp" placeholder="number only.." onkeypress="return isNumberKey(event)"></input>
       <br /><br />
 
       <label for="tithing">Tithing</label><br />
-      <input type="text" id="tithing" name="tithing" onkeypress="return isNumberKey(event)" ></input>
+      <input type="text" id="tithing" name="tithing" placeholder="number only.." onkeypress="return isNumberKey(event)" ></input>
       <br /><br />
 
       <label for="others">Others</label><br />
-      <input type="text" id="others" name="others" onkeypress="return isNumberKey(event)" ></input>
+      <input type="text" id="others" name="others" placeholder="number only.." onkeypress="return isNumberKey(event)" ></input>
       <br /><br />
 
       <label for="saving">Saving</label><br />
-      <input type="text" id="saving" name="saving" onkeypress="return isNumberKey(event)" ></input>
+      <input type="text" id="saving" name="saving" placeholder="number only.." onkeypress="return isNumberKey(event)" ></input>
       <br /><br />
 
         <button name="submit" type="submit">Submit</button>
