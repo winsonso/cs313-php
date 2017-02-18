@@ -5,40 +5,76 @@
 <title>Edit</title>
 </head>
 
+<?php
+session_start();
+if (isset($_SESSION['username']) && isset($_SESSION['login_id']))
+{
+  $username = $_SESSION['username'];
+  $login_id = $_SESSION['login_id'];
+}
+else
+{
+  header("Location: signIn.php");
+  die(); // we always include a die after redirects.
+}
+?>
 
 <?php
 
-$id=$_GET['id'];
+$record_id=$_GET['id'];
 
 require("dbConnect.php");
   $db= get_db();
 
-  foreach ($db->query('SELECT * from scripture where id='.$_GET["id"]) as $row)
+  foreach ($db->query('SELECT * from record where record_id='.$_GET["id"]) as $row)
 
 
 ?>
 
 <body>
-<h2>Edit Your Favorite Scripture</h2>
-<form id="mainForm" action="update.php?id= <?php echo $id;?>" method="POST">
-  <label for="txtBooK">Book</label>
-  <input type="text" id="txtBook" name="txtBook" value='<?php echo $row['book'];?>'></input>
-  <br /><br />
+<h2>Edit Your Record</h2>
 
-  <label for="txtChapter">Chapter</label>
-  <input type="text" id="txtChapter" name="txtChapter" value='<?php echo $row['chapter'];?>'></input>
-  <br /><br />
+    <form id="mainForm" action="insertToDb.php" method="POST">
+      <label for="">Date</label>
+      <select name ="month" value='<?php echo $row['month'];?>'>
+        <option value="Jan">Jan</option>
+        <option value="Feb">Feb</option>
+        <option value="Mar">Mar</option>
+        <option value="Apr">Apr</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="Aug">Aug</option>
+        <option value="Sept">Sept</option>
+        <option value="Oct">Oct</option>
+        <option value="Nov">Nov</option>
+        <option value="Dec">Dec</option>
+      </select>
+      <input type="text" id="year" name="year" placeholder="YEAR" size="4" onkeypress="return isNumberKey(event)" value='<?php echo $row['year'];?>'></input>
+      <br /><br />
 
-  <label for="txtVerse">Verse</label>
-  <input type="text" id="txtVerse" name="txtVerse" value='<?php echo $row['verse'];?>'></input>
-  <br /><br />
+      <label for="living_exp">Living Expense</label><br />
+      <input type="text" id="living_exp" name="living_exp" placeholder="number only.." onkeypress="return isNumberKey(event)" value='<?php echo $row['living_exp'];?>'></input>
+      <br /><br />
 
-  <label for="txtContent">Content:</label><br />
-  <textarea id="txtContent" name="txtContent" rows="4" cols="50" ><?php echo $row['content'];?></textarea>
-  <br /><br />
+      <label for="food_exp">Food Expense</label><br />
+      <input type="text" id="food_exp" name="food_exp" placeholder="number only.." onkeypress="return isNumberKey(event)" value='<?php echo $row['food_exp'];?>'></input>
+      <br /><br />
 
-    <button name="submit" type="submit">Update</button>
-</form>
+      <label for="tithing">Tithing</label><br />
+      <input type="text" id="tithing" name="tithing" placeholder="number only.." onkeypress="return isNumberKey(event)" value='<?php echo $row['tithing'];?>' ></input>
+      <br /><br />
+
+      <label for="others">Others</label><br />
+      <input type="text" id="others" name="others" placeholder="number only.." onkeypress="return isNumberKey(event)" value='<?php echo $row['others'];?>' ></input>
+      <br /><br />
+
+      <label for="saving">Saving</label><br />
+      <input type="text" id="saving" name="saving" placeholder="number only.." onkeypress="return isNumberKey(event)" value='<?php echo $row['saving'];?>' ></input>
+      <br /><br />
+
+        <button name="submit" type="submit">Update</button>
+    </form>
 
 
   </body>
