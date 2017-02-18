@@ -37,25 +37,25 @@ echo "id" . $login_id;
 require("dbConnect.php");
   $db= get_db();
 
-try
-{
-	// Add the Scripture
-	// We do this by preparing the query with placeholder values
-	$query = "INSERT INTO record (living_exp, tithing, food_exp, others, saving, ac_id, 'date')VALUES ('".$book."','".$chapter."','".$verse."','".$content."')";
-	$statement = $db->prepare($query);
+// try
+// {
+// 	// Add the Scripture
+// 	// We do this by preparing the query with placeholder values
+// 	$query = "INSERT INTO record (living_exp, tithing, food_exp, others, saving, ac_id, 'date')VALUES ('".$book."','".$chapter."','".$verse."','".$content."')";
+// 	$statement = $db->prepare($query);
 
-	$statement->execute();
-	//echo "New record created successfully";
+// 	$statement->execute();
+// 	//echo "New record created successfully";
 
-}
-catch (Exception $ex)
-{
-	// Please be aware that you don't want to output the Exception message in
-	// a production environment
-	echo "Error with DB. Details: $ex";
-	die();
-}
-header("Location: showCxt.php");
-die();
+// }
+// catch (Exception $ex)
+// {
+// 	// Please be aware that you don't want to output the Exception message in
+// 	// a production environment
+// 	echo "Error with DB. Details: $ex";
+// 	die();
+// }
+// header("Location: showCxt.php");
+// die();
 
 ?>
