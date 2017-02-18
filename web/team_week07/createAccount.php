@@ -44,6 +44,7 @@ try
 	// // **********************************************
 	// $statement->bindValue(':password', $hashedPassword);
 	$statement->execute();
+	echo "New record created successfully";
 }
 catch (Exception $ex)
 {
