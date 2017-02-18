@@ -21,7 +21,7 @@ $living_exp = $_POST['living_exp'];
 $food_exp = $_POST['food_exp'];
 $tithing = $_POST['tithing'];	
 $others = $_POST['others'];
-$saving = $_POST['svaing'];
+$saving = $_POST['saving'];
 $date = $month.' '.$year;
 
 echo "month" . $month;
