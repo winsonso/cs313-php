@@ -29,21 +29,21 @@ echo "pw=".$password;
 // Get the hashed password.
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 // Connect to the database
-
+$password = $hashedPassword;
 
 require("dbConnect.php");
 $db = get_db();
 try
 {
 	echo "username2=".$username;
-echo "pw2=".$hashedPassword;
+echo "pw2=".$password;
 	$query = "INSERT INTO account(username, password) VALUES(:username, :password)";
 	$statement = $db->prepare($query);
 	$statement->bindValue(':username', $username);
 	// // **********************************************
 	// // NOTICE: We are submitting the hashed password!
 	// // **********************************************
-	$statement->bindValue(':password', $hashedPassword);
+	$statement->bindValue(':password', $password);
 	$statement->execute();
 	echo "New record created successfully";
 }
