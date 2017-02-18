@@ -9,11 +9,14 @@
 <?php
 
 // get the data from the POST
-$id=$_GET['id'];
-$book = $_POST['txtBook'];
-$chapter = $_POST['txtChapter'];
-$verse = $_POST['txtVerse'];
-$content = $_POST['txtContent'];
+$month = $_POST['month'];
+$year = $_POST['year'];
+$living_exp = $_POST['living_exp'];
+$food_exp = $_POST['food_exp'];
+$tithing = $_POST['tithing'];	
+$others = $_POST['others'];
+$saving = $_POST['saving'];
+$record_id=$_GET['id'];
 
 //echo "string" . $id . $book;
 
@@ -24,12 +27,12 @@ try
 {
 	// Add the Scripture
 	// We do this by preparing the query with placeholder values
-	$query = "UPDATE scripture SET book='$book', chapter='$chapter', verse='$verse', content='$content' WHERE id='$id'";
+	$query = "UPDATE record SET living_exp='$living_exp', tithing='$tithing', food_exp='$food_exp', others='$others', saving='$saving', month='$month', year='$year' WHERE id='$record_id'";
 	$statement = $db->prepare($query);
 
 	$statement->execute();
 	echo "<strong><center>Updated record successfully!</center></strong>";
-	echo "<a href=\"week05.php\">Back to Scripture Resources - Search Page</a>";
+	echo "<a href=\"showCxt.php\">Back to Record Page</a>";
 
 }
 catch (Exception $ex)
