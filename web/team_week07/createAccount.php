@@ -29,13 +29,14 @@ echo "pw=".$password;
 // Get the hashed password.
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 // Connect to the database
-echo "username2=".$username;
-echo "pw2=".$hashedPassword;
+
 
 require("dbConnect.php");
 $db = get_db();
 try
 {
+	echo "username2=".$username;
+echo "pw2=".$hashedPassword;
 	$query = "INSERT INTO account(username, password) VALUES('".$username."','".$hashedPassword."')";
 	$statement = $db->prepare($query);
 	// $statement->bindValue(':username', $username);
