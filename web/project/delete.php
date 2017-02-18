@@ -13,7 +13,6 @@ try
 	$statement = $db->prepare($query);
 
 	$statement->execute();
-	//echo "New record created successfully";
 
 }
 catch (Exception $ex)

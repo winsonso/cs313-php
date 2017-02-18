@@ -18,15 +18,6 @@ $others = $_POST['others'];
 $saving = $_POST['saving'];
 $record_id=$_GET['id'];
 
-echo "month " . $month;
-echo "year " . $year;
-echo "living_exp " . $living_exp;
-echo "food_exp " . $food_exp;
-echo "tithing " . $tithing;
-echo "others " . $others;
-echo "saving " . $saving;
-echo "record_id " . $record_id;
-
 require("dbConnect.php");
   $db= get_db();
 
@@ -39,7 +30,7 @@ try
 
 	$statement->execute();
 	echo "<strong><center>Updated record successfully!</center></strong>";
-	echo "<a href=\"showCxt.php\">Back to Record Page</a>";
+	echo "<center><button type=\"button\"><a href=\"showCxt.php\">Back to Record Page</a></button></center>";
 
 }
 catch (Exception $ex)

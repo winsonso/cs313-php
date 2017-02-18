@@ -30,8 +30,6 @@ else
 <?php
 
 $record_id=$_GET['id'];
-//echo "record_id : ".$record_id;
-
 require("dbConnect.php");
   $db= get_db();
 
