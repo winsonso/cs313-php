@@ -57,7 +57,7 @@ if ($badLogin)
 }
 ?>
 
-<h1>Please sign in below:</h1>
+<h1>Login to Web App</h1>
 
 <form id="mainForm" action="signIn.php" method="POST">
 
