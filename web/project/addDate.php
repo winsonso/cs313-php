@@ -1,8 +1,9 @@
 <?php
 session_start();
-if (isset($_SESSION['username']))
+if (isset($_SESSION['username']) && isset($_SESSION['login_id']))
 {
   $username = $_SESSION['username'];
+  $login_id = $_SESSION['login_id'];
 }
 else
 {

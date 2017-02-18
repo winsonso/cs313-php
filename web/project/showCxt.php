@@ -31,6 +31,7 @@ $db = get_db();
     {
     	echo "<tr><td>".$row['username']."</td><td>".$row['date']."</td><td>".$row['living_exp']."</td><td>".$row['food_exp']."</td><td>".$row['tithing']."</td><td>".$row['others']."</td><td>".$row['saving']."</td><td><button type=\"button\"><a href=\"addDate.php\">ADD</a></button></td><td><button type=\"button\"><a href=\"#\">EDIT</a></button></td><td><button type=\"button\"><a href=\"#\">DELETE</a></button></td></tr>";
     	//echo $row[0] . ' ' . $row['tithing'] . ' '. $row['food_exp']. ' ' . $row['others'] . ' '. $row['saving'];
+      $_SESSION['login_id'] = $row['id'];
     }
 
     echo "</table>";
