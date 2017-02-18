@@ -1,15 +1,18 @@
 <?php
 session_start();
-if (isset($_SESSION['username']) && isset($_SESSION['login_id']))
-{
-  $username = $_SESSION['username'];
-  $login_id = $_SESSION['login_id'];
-}
-else
-{
-  header("Location: signIn.php");
-  die(); // we always include a die after redirects.
-}
+// if (isset($_SESSION['username']) && isset($_SESSION['login_id']))
+// {
+//   $username = $_SESSION['username'];
+//   $login_id = $_SESSION['login_id'];
+// }
+// else
+// {
+//   header("Location: signIn.php");
+//   die(); // we always include a die after redirects.
+// }
+
+echo $_SESSION['username'];
+echo $_SESSION['login_id'];
 ?>
 
 <!DOCTYPE html>
