@@ -43,7 +43,8 @@ try
 	// Add the Scripture
 	// We do this by preparing the query with placeholder values
 
-	$query = "INSERT INTO record (living_exp, tithing, food_exp, others, saving, ac_id, date)VALUES (".$living_exp.",".$tithing.",".$food_exp.",".$others.",".$saving.",".$login_id.",'".$date."')";
+//	$query = "INSERT INTO record (living_exp, tithing, food_exp, others, saving, ac_id, date)VALUES (".$living_exp.",".$tithing.",".$food_exp.",".$others.",".$saving.",".$login_id.",'".$date."')";
+		$query = "INSERT INTO record (living_exp, tithing, food_exp, others, saving, ac_id, date)VALUES (11,22,33,44,55,1,'Feb 1234')";
 	$statement = $db->prepare($query);
 
 	$statement->execute();
