@@ -27,7 +27,7 @@ echo "pw=".$password;
 // submitting the form and preven the submission.
 //$username = htmlspecialchars($username);
 // Get the hashed password.
-//$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 // Connect to the database
 
 
