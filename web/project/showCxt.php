@@ -22,7 +22,7 @@ $db = get_db();
   </head>
   <body>
      <h1>Expense Tracker</h1>
-     Hello: <?= $username ?><br />
+     <h2>Hello: <?= $username ?></h2><br />
      <button type="button"><a href="addDate.php">ADD YOUR RECORD!</a></button>
 <?php
     $sql = "SELECT id FROM login WHERE username ='". $username."'";
@@ -32,8 +32,7 @@ $db = get_db();
     }
 
     $sqlstring = "SELECT * FROM record INNER JOIN login ON record.ac_id = login.id WHERE login.username ='". $username."' ORDER BY record_id";
-    //echo $sqlstring;
-    //$statement->bindValue(':username', $username);
+
     echo "<table><tr><th>User</th><th>Date</th><th>Living Expense</th><th>Food Expense</th><th>Tithing</th><th>Others</th><th>Saving</th></tr>";
     foreach ($db->query($sqlstring) as $row)
     {
@@ -45,6 +44,7 @@ $db = get_db();
     echo "</table>";
 
 ?>
+<br>
 <a href="signOut.php">Sign Out</a>
 
 

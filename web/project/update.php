@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>update</title>
+<link rel="stylesheet" href="css/newstyle.css">
 </head>
 
 <body>
