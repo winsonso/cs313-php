@@ -37,8 +37,7 @@ $db = get_db();
     foreach ($db->query($sqlstring) as $row)
     {
     	echo "<tr><td>".$row['username']."</td><td>".$row['month'].' '.$row['year']."</td><td>".$row['living_exp']."</td><td>".$row['food_exp']."</td><td>".$row['tithing']."</td><td>".$row['others']."</td><td>".$row['saving']."</td><td><button type=\"button\"><a href=\"edit.php?id=".$row['record_id']."\">EDIT</a></button></td><td><button type=\"button\"><a href=\"delete.php?id=".$row['record_id']."\">DELETE</a></button></td></tr>";
-    	//echo $row[0] . ' ' . $row['tithing'] . ' '. $row['food_exp']. ' ' . $row['others'] . ' '. $row['saving'];
-      //$_SESSION['login_id'] = $row['id'];
+
     }
 
     echo "</table>";
